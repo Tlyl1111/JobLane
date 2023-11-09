@@ -8,4 +8,4 @@ const Account = new Schema({
     Role: String,
   });
 
-module.exports = mongoose.model('Account', Account, 'Account');
+module.exports = mongoose.model('Account', Account, 'accounts');
