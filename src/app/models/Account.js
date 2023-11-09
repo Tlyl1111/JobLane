@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Account = new Schema({
-    keyacc: String,
-    email: String,
-    password: String,
-    role: String,
+    KeyAcc: String,
+    Email: String,
+    Password: String,
+    Role: String,
   });
 
-  module.exports = mongoose.model('Account', Account, 'Account');
+module.exports = mongoose.model('Account', Account, 'Account');
