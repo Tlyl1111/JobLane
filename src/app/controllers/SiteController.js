@@ -1,4 +1,10 @@
 const Account = require('../models/Account');
+const Application = require('../models/Application');
+const Comment = require('../models/Comment');
+const Company = require('../models/Company');
+const Job = require('../models/Job');
+const JobDetail = require('../models/JobDetail');
+const User = require('../models/User');
 
 class SiteController {
     // [GET] /
@@ -18,8 +24,8 @@ class SiteController {
             res.status(400).json({ error: 'ERROR!!!', details: err.message });
           } */
         try {
-            const account = await Account.find({});
-            res.json(account);
+            const user = await User.find({});
+            res.json(user);
         } catch (err) {
             console.error(err); // Ghi log lỗi
             res.status(400).json({error: 'ERROR!!!'});
