@@ -17,6 +17,9 @@ app.use(favicon(path.join(__dirname, 'public', 'img', 'logoJL.png')))
 
 app.use(morgan('combined'))
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.engine(
   'hbs',
   handlebars({

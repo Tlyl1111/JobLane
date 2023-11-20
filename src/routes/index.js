@@ -1,8 +1,11 @@
+
 const siteRouter = require('./site');
 
+const authRouter = require('./auth');
+
 function route(app) {
+    app.use('/signin', authRouter);
     app.use('/', siteRouter);
-    app.use('/home', siteRouter);
 }
 
 module.exports = route;
