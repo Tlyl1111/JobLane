@@ -26,7 +26,8 @@ class SiteController {
             res.status(400).json({ error: 'ERROR!!!', details: err.message });
           } */
         try {
-            const account = await Account.find({Email:'admin1@email.com'});
+            const role = 'employer1@gmail.com';
+            const account = await Account.findOne({Email: role});
             res.json(account);
         } catch (err) {
             console.error(err); // Ghi log lỗi
@@ -44,18 +45,23 @@ class SiteController {
 
         try {
         // Tìm tài khoản dựa trên email
-        const account = await Account.findOne({Email:Email}).exec();
+        const account = await Account.findOne({Email: Email}).exec();
       
         if (!account) {
             return res.status(401).send('Email không tồn tại.');
         }
 
         // So sánh mật khẩu nhập vào với mật khẩu đã băm trong database
-        const passwordMatch = await bcrypt.compare(Password, account.Password);
+        /* const passwordMatch = await bcrypt.compare(Password, account.Password);
 
         if (!passwordMatch) {
-            return res.status(401).send('Mật khẩu không chính xác.');
+            return res.status(401).send(Password +' Mật khẩu không chính xác. '+ account.Password);
+        } */
+
+        if(Password != account.Password) {
+            return res.status(401).send(Password +' Mật khẩu không chính xác. '+ account.Password);
         }
+
 
         // Kiểm tra vai trò của tài khoản và tạo token nếu cần
         if (account.Role === 'admin') {
