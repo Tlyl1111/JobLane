@@ -5,6 +5,7 @@ const Application = new Schema({
     KeyUser: String,
     KeyJob: String,
     CV: String,
+    Status: String,
   });
 
 module.exports = mongoose.model('Application', Application, 'applications');
