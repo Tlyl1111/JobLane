@@ -1,0 +1,18 @@
+@import 'variables';
+body{
+    font-family: $font-default;
+    background-color: white;
+}
+.w-30 {
+    width: 30%;
+}
+.custom-logo {
+    width: 80px;
+    height: auto;
+  }
+.btn.btn-primary{
+    display: flex;
+    align-items: center;
+    background-color: $light-turtoise;
+
+}

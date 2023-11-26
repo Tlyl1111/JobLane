@@ -1,0 +1,81 @@
+@import 'variables';
+body{
+    font-family: $font-default;
+    
+}
+
+.item.button {
+    padding: 8px 15px; 
+    text-decoration: none;
+    border-radius: 100px; 
+    color: black;
+  }
+  
+  .item.button {
+    background-color:$light-turtoise; 
+  }
+  
+  .item.button.secondary {
+    background-color: transparent; 
+  }
+  
+ 
+  .item.button:hover {
+    background-color: whitesmoke; 
+  }
+  
+  .nav-item-divider {
+    border-right: 2px solid $dark-teal; 
+    height: 30px; 
+    margin: 0 10px; 
+  }
+  
+  
+  .nav-item {
+    align-items: center; 
+    display: flex; 
+    font-size: 16px;
+  }
+  .notification-icon img {
+    width: 24px; 
+    height: auto; 
+    margin-right: 12px;
+  }
+  
+  
+  .nav-item.dropdown img {
+    width: 52px; 
+    height: auto; 
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 3px solid $light-turtoise;
+  }
+  .navbar.navbar-brand{
+    width: 50px;
+    height: auto;
+  }
+  
+.nav-item .nav-link {
+    font-size: 16px; 
+  }
+  
+  
+  .nav-item.active .nav-link {
+    background-color: $light-turtoise; 
+    color: black;
+    border-radius: 100px; 
+    padding: 5px 10px; 
+  }
+  
+  
+  .nav-item .nav-link:hover {
+    background-color: whitesmoke; 
+    border-radius: 100px; 
+    padding: 5px 10px; 
+  }
+  
+  
+  .nav-item {
+    margin-right: 5px; 
+  }
+   
