@@ -3,10 +3,9 @@ const router = express.Router();
 
 const siteController = require('../app/controllers/SiteController');
 
-//newsController.index
-router.use('/home', siteController.home);
-router.post('/admin', siteController.admin);
+
+router.use('/theliem', siteController.theliem);
 //add site ở trên dòng này
-router.use('/', siteController.index);
+router.use('/', siteController.signin);
 
 module.exports = router;
