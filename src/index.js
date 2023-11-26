@@ -14,9 +14,9 @@ const db = require('./config/db');
 db.connect();
 
 app.use(favicon(path.join(__dirname, 'public', 'img', 'logoJL.png')))
-
+app.use('/src/public', express.static('src/public'));
 app.use(morgan('combined'))
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
