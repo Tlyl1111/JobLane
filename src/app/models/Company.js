@@ -3,13 +3,15 @@ const Schema = mongoose.Schema;
 
 const Company = new Schema({
     KeyCompany: String,
-    QuantityEmployee: Number,
-    Follower: Number,
-    Website: String,
+    //QuantityEmployee: Number,
+    //Follower: Number,
+    //Website: String,
     Name: String,
     Description: String,
-    Avatar: String,
+    Goal: String,
+    Logo: String,
     Address: String,
+    Email: String,
   });
 
 module.exports = mongoose.model('Company', Company, 'companies');

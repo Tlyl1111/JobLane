@@ -3,8 +3,8 @@ const router = express.Router();
 
 const authController = require('../app/controllers/AuthController');
 
-//newsController.index
-router.use('/:slug', authController.show);
-router.use('/', authController.index);
+
+
+router.post('/auth', authController.admin);
 
 module.exports = router;
