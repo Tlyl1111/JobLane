@@ -10,17 +10,37 @@ const jwt = require('jsonwebtoken');
 
 class AuthController {
     // [GET] /news
-    async admin(req, res) {
+    async signin(req, res) {
         // Lấy dữ liệu từ các trường nhập vào của form login
         const { Email, Password } = req.body;
 
         try {
         // Tìm tài khoản dựa trên email
         const account = await Account.findOne({Email: Email}).exec();
-    
+
+        if (req.body.rememberMe) {
+            const rememberToken = crypto.randomBytes(20).toString('hex');
+            // Lưu token vào cơ sở dữ liệu và thiết lập cookie
+            res.cookie('remember_me', rememberToken, { maxAge: 2592000000, httpOnly: true }); // 30 ngày
+        }
+
         if (!account) {
             return res.status(401).send('Email không tồn tại.');
         }
+
+        if (account) {
+            // Lưu thông tin người dùng vào session hoặc một object toàn cục
+            req.session.user = {
+            ...account.toObject(),
+            isJobseeker: account.Role === 'jobseeker',
+            isEmployer: account.Role === 'employer'
+            
+          };
+
+              // Loại bỏ mật khẩu khỏi session
+            // Tiếp tục với việc chuyển hướng hoặc xử lý khác
+          }
+          
 
         /* if (Email != account) {
             return res.status(401).send('Email không tồn tại trong data');
@@ -93,12 +113,14 @@ class AuthController {
                     return res.status(403).send('Không có quyền truy cập.');
                 }
             }
-        }
+        };
+        
         } catch (error) {
         console.error(error);
         res.status(500).send('Lỗi server.'); 
         }
-    }
+    };
+    
 
     
 }
