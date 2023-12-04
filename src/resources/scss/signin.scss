@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'typography';
 body{
     font-family: $font-default;
     background-color: white;
@@ -10,9 +11,40 @@ body{
     width: 80px;
     height: auto;
   }
-.btn.btn-primary{
+  .btn.btn-primary {
     display: flex;
-    align-items: center;
+    justify-content: center; /* This centers the button text horizontally */
+    align-items: center; /* This centers the button text vertically */
     background-color: $light-turtoise;
-
+    border-radius: 100px;
+    border-color: $light-turtoise;
+    margin: 10px 0; /* Ensures margin is only vertical */
+    @include font-large-medium;
+    padding: 5px; /* Adjust as needed */
 }
+.form-check-input {
+    accent-color: $light-turtoise; /* Replace with your desired color */
+  }
+  
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.forget-pw{
+    text-decoration: none;
+    color: black;
+    
+}
+.login-title{
+    @include font-h2-extra-bold;
+}
+.lead{
+    @include font-medium-normal;
+}
+.login-label{
+    @include font-medium-normal;
+}
+.sub-label{
+    @include font-regular-normal;
+}
+

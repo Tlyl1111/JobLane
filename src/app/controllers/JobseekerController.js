@@ -12,7 +12,8 @@ class JobseekerController {
     
     
     async dashboard(req, res) {
-        res.render('jobseeker/dashboard');
+        res.render('dashboard');
+        
     }
     
 }
