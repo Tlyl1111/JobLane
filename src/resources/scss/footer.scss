@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'typography';
 body{
     font-family: $font-default;
     background-color: white;
@@ -11,20 +12,25 @@ body{
 }
 
 .button {
-    padding: 10px 20px; /* Adjust padding to change the size */
-    background-color: #007bff; /* Set background color */
-    color: white; /* Set text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Adjust font size */
-    font-weight: bold; /* Bold text */
-    text-transform: uppercase; /* Uppercase text */
-    cursor: pointer; /* Cursor changes to a pointer to indicate it's clickable */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    padding: 10px 20px; 
+    background-color: $light-turtoise; 
+    color: $dark-teal; 
+    border: none; 
+    border-radius: 100px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .button:hover, .button:focus {
-    background-color: #0056b3; /* Darker shade for hover and focus */
-    color: #ffffff; /* Maintain white text color */
-    outline: none; /* Remove focus outline */
+    background-color: $light-turtoise; 
+    color: $dark-teal; 
+    outline: none;
+}
+.list-unstyled{
+    text-align: left;
+}
+.footer-sub{
+    @include font-small-normal;
+    text-decoration: none;
+    color: black;
 }

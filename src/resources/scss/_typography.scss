@@ -1,0 +1,194 @@
+// Mixin for font size
+@mixin font-size($size) {
+    font-size: $size;
+    line-height: (1.5 * $size); // Adjust line height as needed, or use a variable
+  }
+  
+  // Mixin for font weight
+  @mixin font-weight($weight) {
+    font-weight: $weight;
+  }
+  
+  // Generic mixin to include size and weight
+  @mixin font-style($size, $weight) {
+    @include font-size($size);
+    @include font-weight($weight);
+  }
+  // Mixins for 'large' size with all weights
+@mixin font-large-light {
+    @include font-style($font-size-large, $font-weight-light);
+  }
+  
+  @mixin font-large-normal {
+    @include font-style($font-size-large, $font-weight-normal);
+  }
+  
+  @mixin font-large-medium {
+    @include font-style($font-size-large, $font-weight-medium);
+  }
+  
+  @mixin font-large-semi-bold {
+    @include font-style($font-size-large, $font-weight-semi-bold);
+  }
+  
+  @mixin font-large-bold {
+    @include font-style($font-size-large, $font-weight-bold);
+  }
+  
+  @mixin font-large-extra-bold {
+    @include font-style($font-size-large, $font-weight-extra-bold);
+  }
+  
+  @mixin font-large-link {
+    @include font-style($font-size-large, $font-weight-link);
+  }
+  
+  // Mixins for 'medium' size with all weights
+  @mixin font-medium-light {
+    @include font-style($font-size-medium, $font-weight-light);
+  }
+  
+  @mixin font-medium-normal {
+    @include font-style($font-size-medium, $font-weight-normal);
+  }
+  
+  @mixin font-medium-medium {
+    @include font-style($font-size-medium, $font-weight-medium);
+  }
+  
+  @mixin font-medium-semi-bold {
+    @include font-style($font-size-medium, $font-weight-semi-bold);
+  }
+  
+  @mixin font-medium-bold {
+    @include font-style($font-size-medium, $font-weight-bold);
+  }
+  
+  @mixin font-medium-extra-bold {
+    @include font-style($font-size-medium, $font-weight-extra-bold);
+  }
+  
+  @mixin font-medium-link {
+    @include font-style($font-size-medium, $font-weight-link);
+  }
+  
+  // Mixins for 'regular' size with all weights
+  @mixin font-regular-light {
+    @include font-style($font-size-regular, $font-weight-light);
+  }
+  
+  @mixin font-regular-normal {
+    @include font-style($font-size-regular, $font-weight-normal);
+  }
+  
+  @mixin font-regular-medium {
+    @include font-style($font-size-regular, $font-weight-medium);
+  }
+  
+  @mixin font-regular-semi-bold {
+    @include font-style($font-size-regular, $font-weight-semi-bold);
+  }
+  
+  @mixin font-regular-bold {
+    @include font-style($font-size-regular, $font-weight-bold);
+  }
+  
+  @mixin font-regular-extra-bold {
+    @include font-style($font-size-regular, $font-weight-extra-bold);
+  }
+  
+  @mixin font-regular-link {
+    @include font-style($font-size-regular, $font-weight-link);
+  }
+  
+  // Mixins for 'small' size with all weights
+  @mixin font-small-light {
+    @include font-style($font-size-small, $font-weight-light);
+  }
+  
+  @mixin font-small-normal {
+    @include font-style($font-size-small, $font-weight-normal);
+  }
+  
+  @mixin font-small-medium {
+    @include font-style($font-size-small, $font-weight-medium);
+  }
+  
+  @mixin font-small-semi-bold {
+    @include font-style($font-size-small, $font-weight-semi-bold);
+  }
+  
+  @mixin font-small-bold {
+    @include font-style($font-size-small, $font-weight-bold);
+  }
+  
+  @mixin font-small-extra-bold {
+    @include font-style($font-size-small, $font-weight-extra-bold);
+  }
+  
+  @mixin font-small-link {
+    @include font-style($font-size-small, $font-weight-link);
+  }
+  
+  // Mixins for 'tiny' size with all weights
+  @mixin font-tiny-light {
+    @include font-style($font-size-tiny, $font-weight-light);
+  }
+  
+  @mixin font-tiny-normal {
+    @include font-style($font-size-tiny, $font-weight-normal);
+  }
+  
+  @mixin font-tiny-medium {
+    @include font-style($font-size-tiny, $font-weight-medium);
+  }
+  
+  @mixin font-tiny-semi-bold {
+    @include font-style($font-size-tiny, $font-weight-semi-bold);
+  }
+  
+  @mixin font-tiny-bold {
+    @include font-style($font-size-tiny, $font-weight-bold);
+  }
+  
+  @mixin font-tiny-extra-bold {
+    @include font-style($font-size-tiny, $font-weight-extra-bold);
+  }
+  
+  @mixin font-tiny-link {
+    @include font-style($font-size-tiny, $font-weight-link);
+  }
+  // _typography.scss
+
+// Assuming the $font-weight-extra-bold variable is already defined
+
+@mixin font-h1-extra-bold {
+    font-size: $font-size-h1;
+    font-weight: $font-weight-extra-bold;
+  }
+  
+  @mixin font-h2-extra-bold {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-extra-bold;
+  }
+  
+  @mixin font-h3-extra-bold {
+    font-size: $font-size-h3;
+    font-weight: $font-weight-extra-bold;
+  }
+  
+  @mixin font-h4-extra-bold {
+    font-size: $font-size-h4;
+    font-weight: $font-weight-extra-bold;
+  }
+  
+  @mixin font-h5-extra-bold {
+    font-size: $font-size-h5;
+    font-weight: $font-weight-extra-bold;
+  }
+  
+  @mixin font-h6-extra-bold {
+    font-size: $font-size-h6;
+    font-weight: $font-weight-extra-bold;
+  }
+  
