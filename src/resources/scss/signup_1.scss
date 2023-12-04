@@ -1,0 +1,32 @@
+@import 'variables';
+@import 'typography';
+body{
+    font-family: $font-default;
+    background-color: white;
+    color: $dark-teal;
+}
+.w-30 {
+    width: 30%;
+}
+.custom-logo {
+    width: 80px;
+    height: auto;
+  }
+  .btn.btn-primary {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: $light-turtoise;
+    border-radius: 100px;
+    border-color: $light-turtoise;
+    margin: 10px 0; 
+    color: $dark-teal;
+    @include font-large-medium;
+    padding: 5px; 
+}
+.lead{
+    @include font-h4-extra-bold;
+}
+.login-title{
+    @include font-h2-extra-bold;
+}
