@@ -1,0 +1,203 @@
+@import 'variables';
+@import 'typography';
+body{
+    font-family: $font-default;
+    background-color: white;
+    color: $dark-teal;
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden;
+}
+.color-1{
+  color: $light-turtoise;
+}
+.color-2{
+  color: $dark-teal;
+}
+.btn{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content;
+    background-color: $light-turtoise;
+    border-radius: 100px;
+    margin: 10px 0; 
+    border: none;
+    color: $dark-teal;
+    @include font-large-medium;
+    padding:8px 12px; 
+    
+}
+.button-primary{
+    @extend .btn
+}
+.button-secondary{
+    @extend .btn;
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+    padding: 8px 12px;
+    
+    &:hover {
+        background-color: $white; 
+        color: $dark-teal; 
+    }
+}
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    .breadcrumb-item {
+        max-width: 360px; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        flex: 0 0 auto; 
+        padding-right: 4px;
+      }
+      
+      .breadcrumb-item + .breadcrumb-item::before {
+        content: ">"; 
+        padding: 0 4px; 
+        color: $dark-teal; 
+      }
+      
+      .breadcrumb-item a {
+        text-decoration: none;
+        color: $dark-teal; 
+        vertical-align: top; 
+      }
+      
+      .breadcrumb-item.active a {
+        color: $dark-teal; 
+      }
+  }
+  
+  
+  
+.company{
+    width: 260px;
+    height: fit-content;
+    border: 1px solid $dark-teal;
+    border-radius: 20px;
+    padding: 20px 12px;
+    .company-logo{
+        width: 148px;
+        height: 148px;
+        border-radius: 50%;
+        margin-bottom: 16px;
+    }
+    .company-name{
+        @include font-h5-extra-bold;
+        margin-bottom: 16px;
+
+    }
+    .company-details{
+        @include font-medium-normal;
+        margin-bottom: 16px;
+
+    }
+    .company-infor{
+
+        @include font-h6-extra-bold;
+        margin-bottom: 16px;
+
+        .phone{
+            @include font-regular-normal;
+        }
+        .email{
+            @include font-regular-normal;
+        }
+    }
+}
+.recommend{
+    
+    width: 340px;
+    .rec-job-item{
+      text-decoration: none;
+      color: $dark-teal;
+    }
+    .rec-job-logo{
+      width: 300px;
+      height: auto;
+    }
+    .rec-job-name{
+      word-wrap: break-word;
+      white-space: normal;
+      overflow-wrap: break-word;
+      text-align: left;
+      @include font-large-normal;
+      width: 280px;
+      margin: 12px;
+    }
+    .rec-job-info{
+      margin-top: 8px;
+      @include font-regular-normal;
+    }
+    .sub-section-title{
+      @include font-h4-extra-bold;
+      text-align: center;
+    }
+}
+hr {
+    border: none; 
+    height: 2px; 
+    background-color: $dark-teal; 
+    margin: 12px;
+  }
+.detail_job{
+    padding: 0px 12px;
+    width: 640px;
+    .author{
+        margin-bottom: 12px;
+        .author-ava{
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+        }
+        .name{
+            @include font-large-normal;
+        }
+        .time{
+            @include font-regular-normal;
+        }
+    }
+    .title{
+        @include font-h5-extra-bold;
+        margin-bottom: 12px;
+
+    }
+    .poster{
+        width: 620px;
+        height: 500px;
+        margin-bottom: 12px;
+
+    }
+    .tag{
+        background-color: $light-turtoise;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        padding: 16px 24px;
+        @include font-large-normal;
+    }
+    .content{
+        .title{
+            @include font-h5-extra-bold;
+
+        }
+        .sub-title{
+            @include font-h6-extra-bold;
+            margin-top: 4px;
+        }
+        .context{
+            @include font-medium-normal;
+            margin-bottom: 4px;
+        }
+
+
+
+    }
+
+}

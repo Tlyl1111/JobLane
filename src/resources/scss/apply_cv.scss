@@ -3,15 +3,20 @@
 body{
     font-family: $font-default;
     background-color: white;
+    color: $dark-teal;
+    margin: 0; 
+    padding: 0; 
+    width: 965px;
+    height: 988px;
+    overflow-x: hidden;
 }
-.w-30 {
-    width: 30%;
+.color-1{
+  color: $light-turtoise;
 }
-.custom-logo {
-    width: 80px;
-    height: auto;
-  }
-  .btn{
+.color-2{
+  color: $dark-teal;
+}
+.btn{
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -39,29 +44,14 @@ body{
         }
     }
 }
-.form-check-input {
-    accent-color: $light-turtoise; /* Replace with your desired color */
+
+.hr {
+    border: none; 
+    height: 2px; 
+    background-color: $dark-teal; 
+    margin: 12px;
+  }
+  .form-check-input {
+    accent-color: $light-turtoise; 
   }
   
-.form-group{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.forget-pw{
-    text-decoration: none;
-    color: black;
-    
-}
-.login-title{
-    @include font-h2-extra-bold;
-}
-.lead{
-    @include font-medium-normal;
-}
-.login-label{
-    @include font-medium-normal;
-}
-.sub-label{
-    @include font-regular-normal;
-}
-
