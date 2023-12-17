@@ -8,21 +8,13 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-class JobseekerController {
+class JobController {
     
     
     async dashboard(req, res) {
-        res.render('jobseeker/dashboard');
+        res.render('job_posting_details');
     }
-    async profile(req, res) {
-        res.render('jobseeker/jobseeker_details');
-    }
-    async applied_job_list(req, res) {
-        res.render('jobseeker/applied_list');
-    }
-    async bookmarked_job_list(req, res) {
-        res.render('jobseeker/favorite_job');
-    }
+    
 }
 
-module.exports = new JobseekerController();
+module.exports = new JobController();
