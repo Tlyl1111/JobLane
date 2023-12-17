@@ -1,0 +1,69 @@
+@import 'variables';
+@import 'typography';
+body{
+    font-family: $font-default;
+    background-color: white;
+    color: $dark-teal;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    overflow-x: hidden;
+}
+.section{
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+.title-section{
+    @include font-h2-extra-bold;
+    margin-bottom: 8px;
+}
+.color-1{
+    color: $light-turtoise;
+}
+.color-2{
+    color: $dark-teal;
+}
+
+
+.job-cate-item{
+    border: 2px solid $light-turtoise;
+    border-radius: 20px; 
+    width: 360px; 
+    height: 280px;
+    text-decoration: none;
+    color: $dark-teal;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* This adds a subtle shadow */
+    text-align: left; 
+    background: $white; 
+    margin-bottom: 24px; 
+}
+.icon-cate{
+    width: 85px;
+    height: 85px;
+}
+.job-name{
+    @include font-h2-extra-bold;
+    white-space: nowrap;
+    overflow: hidden; /* Hide text that goes beyond the width */
+    text-overflow: ellipsis; /* Add ellipsis at the end of the hidden text */
+    width: 280px; /* Adjust this to the maximum width your text can */
+}
+
+.job-cate-item:hover {
+    text-decoration: none; 
+    color: darken($light-turtoise, 10%); 
+}
+.detail{
+    @include font-large-normal
+}
+.job-cate-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.breadcrumb {
+    background: transparent; 
+    padding: 0.5rem 1rem; 
+    margin-bottom: 0;
+    
+  }
