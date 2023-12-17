@@ -1,0 +1,79 @@
+@import 'variables';
+@import 'typography';
+body{
+    font-family: $font-default;
+    background-color: white;
+}
+.w-30 {
+    width: 30%;
+}
+.custom-logo {
+    width: 80px;
+    height: auto;
+  }
+  .btn{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content;
+    background-color: $light-turtoise;
+    border-radius: 100px;
+    margin: 10px 0; 
+    border: none;
+    color: $dark-teal;
+    @include font-large-medium;
+    padding:8px 12px; 
+    .button-primary{
+        @extend .btn
+    }
+    .button-secondary{
+        @extend .btn;
+        background-color: transparent;
+        border: 1px solid $white;
+        color: $white;
+        padding: 8px 12px;
+        
+        &:hover {
+            background-color: $white; 
+            color: $dark-teal; 
+        }
+    }
+}
+.form-control{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .form-item{
+        border: 1px solid $muted-teal;
+    }
+}
+.title{
+    @include font-large-semi-bold;
+}
+.lead{
+    @include font-medium-normal;
+}
+label{
+    @include font-small-semi-bold;
+}
+.sub-label{
+    @include font-regular-normal;
+}
+.img{
+    border: 5px solid $light-turtoise;
+    border-radius: 50%;
+    vertical-align: middle;
+    width: 300px;
+    height: 300px;
+}
+.large-box{
+    height: 200px;
+    box-sizing: border-box;
+}
+.textarea {
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+}
+

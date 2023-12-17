@@ -5,6 +5,7 @@ const Application = new Schema({
     KeyUser: String,
     KeyJob: String,
     CV: String,
+    CoverLetter: String,
     Status: String,
   });
 
