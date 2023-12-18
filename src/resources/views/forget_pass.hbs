@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/public/css/forget_pass.css">
+</head>
+<body>
+     <div class="top text-center my-5">
+        <img src="/src/public/img/Logo/logo-01 1 (1).svg" class="custom-logo" alt="logo">
+        <h1>Forget your Password?</h1>
+        <p>Enter the email address you signed up<br>
+        Wait for the recovery details to be sent</p>
+    </div>
+    
+    <form class="mb-5 w-30 mx-auto" id="login" action="/auth" method="post">
+        <div class="form-group mb-3">
+            <label class="login-label" for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+        <div class="ml-5">
+            <span>You has not get the email?</span>
+            <a href="#">Resent Now</a>
+        </div>
+
+    </form>
+
+</body>

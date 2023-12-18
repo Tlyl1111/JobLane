@@ -12,7 +12,7 @@ body{
     height: 104px;
 }
 
-  .form-group button{
+.form-group button{
     width: 100%;
     padding: 5px 10px;
     background-color: $light-turtoise;
@@ -36,10 +36,10 @@ body{
 .forget-pw{
     text-decoration: none;
     color: black;
-    
 }
 .top h1{
     @include font-h2-extra-bold;
+    margin-bottom: 12px;
 }
 .top p{
     @include font-medium-normal;
