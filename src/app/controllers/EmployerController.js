@@ -14,7 +14,18 @@ class EmployerController {
     async dashboard(req, res) {
         res.render('employer/dashboard');
     }
-    
+    async job_posting(req, res) {
+        res.render('employer/post_job');
+    }
+    async posted_jobs(req, res) {      
+        res.render('employer/post_list');
+    }
+    async profile(req, res) {
+        res.render('employer/employer_details');
+    }
+    async applicants(req, res) {
+        res.render('employer/applicant_list');
+    }
 }
 
 module.exports = new EmployerController();
