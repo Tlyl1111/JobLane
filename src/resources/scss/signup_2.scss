@@ -1,0 +1,63 @@
+@import 'variables';
+@import 'typography';
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $dark-teal;
+    text-decoration: none;
+}
+body{
+    font-family: $font-default;
+    background-color: white;
+}
+.w-30 {
+    width: 30%;
+}
+.top img{
+    width: 104px;
+    height: 104px;
+}
+.form-check-input {
+    accent-color: $light-turtoise; /* Replace with your desired color */
+    width: 18px;
+    height: 18px;
+  }
+  
+.form-group{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form-group button{
+    width: 100%;
+    padding: 5px 10px;
+    background-color: $light-turtoise;
+    border-radius: 100px;
+    border: none;
+    @include font-large-medium;
+}
+.form-group button:hover{
+    background-color: #fefefe;
+    border: 1px solid $dark-teal;
+}
+.forget-pw{
+    text-decoration: none;
+    color: black;
+    
+}
+.top h1{
+    @include font-h2-extra-bold;
+}
+.top p{
+    @include font-medium-normal;
+}
+.form-group label{
+    @include font-medium-normal;
+}
+.form-check-label{
+    @include font-medium-medium;
+}
+a{
+    color: $light-turtoise;
+}
+

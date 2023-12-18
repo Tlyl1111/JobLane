@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/public/css/employer_admin.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="top d-flex justify-content-between">
+            <span class="curent_page">Employers</span>
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <img src="/src/public/img/Search.svg" alt="Search" class="search-icon"> 
+                    <input type="text" class="search-input" placeholder="Search">
+                </div>
+                <img src="/src/public/img/Avatar.png" alt="User" class="user-avatar"> 
+            </div>
+        </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Registry Time</th>
+                <th>Registry Date</th>
+                <th>Details</th>
+            
+            <tr>
+                <td>Selena Gomez</td>
+                <td>abcxyz@gmail.com</td>
+                <td>097xxxxxx</td>
+                <td>21:32</td>
+                <td>26/03/2023</td>
+                <td class="d-flex">
+                    <button class="contact">Send Email</button>
+                    <button class="view">
+                        View
+                        <img src="/src/public/img/Chevron Right.svg" alt="">
+                    </button>
+                </td>
+            </tr>
+            
+            
+            
+        </table>
+        <div class="table-control d-inline-flex justify-content-start align-items-center">
+        <div class="rows-per-page d-inline-flex">
+            <label for="rows" class="align-self-center">Rows per page:</label>
+            <select id="rows" name="rows">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+            </select>
+        </div>
+        <div class="pagination-info">
+            1/1 of 1
+        </div>
+        <div class="pagination-controls">
+            <button>&lt;</button> <!-- Previous page -->
+            <button>&gt;</button> <!-- Next page -->
+        </div>
+    </div>
+
+    </div>
+    
+        
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const defaultRowsPerPage = 10; // Set your default value here
+        let currentPage = 1;
+        let rowsPerPage = defaultRowsPerPage;
+        const rowsSelect = document.getElementById('rows');
+        const paginationInfo = document.querySelector('.pagination-info');
+        const prevButton = document.querySelector('.pagination-controls button:first-child');
+        const nextButton = document.querySelector('.pagination-controls button:last-child');
+        const table = document.querySelector('table'); // Assuming there is only one table
+
+        function updateTableDisplay() {
+            const rows = table.querySelectorAll('tr:not(:first-child)');
+            const totalPages = Math.ceil(rows.length / rowsPerPage);
+            
+            // Hide all rows
+            rows.forEach(row => {
+                row.style.display = 'none';
+            });
+
+            // Calculate the range of rows to display
+            const start = (currentPage - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            
+            // Show the rows for the current page
+            rows.forEach((row, index) => {
+                if (index >= start && index < end) {
+                    row.style.display = '';
+                }
+            });
+
+            paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+        }
+
+        function goToPage(pageNumber) {
+            currentPage = pageNumber;
+            updateTableDisplay();
+        }
+
+        rowsSelect.addEventListener('change', function(event) {
+            rowsPerPage = parseInt(event.target.value, 10);
+            goToPage(1); // Reset to the first page and update table display
+        });
+
+        prevButton.addEventListener('click', function() {
+            if (currentPage > 1) {
+                goToPage(currentPage - 1);
+            }
+        });
+
+        nextButton.addEventListener('click', function() {
+            const rows = table.querySelectorAll('tr:not(:first-child)');
+            const totalPages = Math.ceil(rows.length / rowsPerPage);
+            if (currentPage < totalPages) {
+                goToPage(currentPage + 1);
+            }
+        });
+
+        // Initialize the table display
+        updateTableDisplay();
+    });
+   
+       
+</script>
+
+</body>

@@ -1,0 +1,221 @@
+@import 'variables';
+@import 'typography';
+
+.color-1{
+  color: $light-turtoise;
+}
+.color-2{
+  color: $dark-teal;
+}
+.w-30{
+  width: 30%;
+}
+.curent_page{
+    @include font-h3-extra-bold;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: 568px; 
+    height: 48px;
+    margin-left: auto;
+    
+  }
+  
+  
+  .input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 20px; /* Space between input and avatar */
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px; /* Adjust as needed */
+  }
+  
+  .search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #F4F7FE; 
+    border-radius: 20px; 
+    padding: 5px 8px 5px 40px; 
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%; /* Make avatar round */
+  }
+  
+  .search-input::placeholder { color: #ccc; }
+  .search-input:focus {
+    background-color: #F4F7FE; 
+  }
+  .detail_job{
+    padding: 0px 12px;
+    width: 640px;
+    .author{
+        margin-bottom: 12px;
+        .author-ava{
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+        }
+        .name{
+            @include font-large-normal;
+        }
+        .time{
+            @include font-regular-normal;
+        }
+    }
+    .title{
+        @include font-h5-extra-bold;
+        margin-bottom: 12px;
+
+    }
+    .poster{
+        width: 620px;
+        height: 500px;
+        margin-bottom: 12px;
+
+    }
+    .tag{
+        background-color: $light-turtoise;
+        border-radius: 20px;
+        margin-bottom: 12px;
+        padding: 16px 24px;
+        @include font-large-normal;
+    }
+    .content{
+        .title{
+            @include font-h5-extra-bold;
+
+        }
+        .sub-title{
+            @include font-h6-extra-bold;
+            margin-top: 4px;
+        }
+        .context{
+            @include font-medium-normal;
+            margin-bottom: 4px;
+        }
+
+
+
+    }
+
+}
+.company{
+  width: 260px;
+  height: fit-content;
+  border: 1px solid $dark-teal;
+  border-radius: 20px;
+  padding: 20px 12px;
+  .company-logo{
+      width: 148px;
+      height: 148px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+  }
+  .company-name{
+      @include font-h5-extra-bold;
+      margin-bottom: 16px;
+
+  }
+  .company-details{
+      @include font-medium-normal;
+      margin-bottom: 16px;
+
+  }
+  .company-infor{
+
+      @include font-h6-extra-bold;
+      margin-bottom: 16px;
+
+      .phone{
+          @include font-regular-normal;
+      }
+      .email{
+          @include font-regular-normal;
+      }
+  }
+}
+button {
+  padding: 4px 12px;
+  border: none;
+  cursor: pointer;
+  @include font-large-medium;
+  transition: background-color 0.3s ease;
+  border-radius: 100px;
+  margin-right: 4px;
+}
+
+.apply-btn {
+  background-color: #2ED5A4; /* Blue */
+  color: $dark-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-btn:hover {
+  background-color: #24aa83; 
+}
+
+.apply-btn img {
+  margin-left: 5px;
+}
+
+.approve {
+  background-color: #2ED5A4; 
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.approve:hover {
+  background-color: #24aa83; /* Darker teal for hover */
+}
+
+.approve img {
+  margin-right: 5px;
+}
+
+.reject {
+  background-color: transparent; 
+  border: 2px solid $dark-teal;
+  color: $dark-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reject:hover {
+  background-color: #f2f2f2; /* Darker teal for hover */
+}
+
+.reject img {
+  margin-right: 5px;
+}
+.back {
+  background-color: transparent; 
+  color: $dark-teal;
+  border: 2px solid $dark-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back:hover {
+  background-color: #f2f2f2; /* Darker teal for hover */
+}
+
+.back img {
+  margin-right: 5px;
+}

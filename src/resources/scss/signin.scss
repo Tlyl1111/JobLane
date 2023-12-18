@@ -7,38 +7,24 @@ body{
 .w-30 {
     width: 30%;
 }
-.custom-logo {
-    width: 80px;
-    height: auto;
-  }
-  .btn{
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    width: fit-content;
+.top img{
+    width: 104px;
+    height: 104px;
+}
+
+  .form-group button{
+    width: 100%;
+    padding: 5px 10px;
     background-color: $light-turtoise;
     border-radius: 100px;
-    margin: 10px 0; 
     border: none;
-    color: $dark-teal;
     @include font-large-medium;
-    padding:8px 12px; 
-    .button-primary{
-        @extend .btn
-    }
-    .button-secondary{
-        @extend .btn;
-        background-color: transparent;
-        border: 1px solid $white;
-        color: $white;
-        padding: 8px 12px;
-        
-        &:hover {
-            background-color: $white; 
-            color: $dark-teal; 
-        }
-    }
 }
+.form-group button:hover{
+    background-color: #fefefe;
+    border: 1px solid $dark-teal;
+}
+
 .form-check-input {
     accent-color: $light-turtoise; /* Replace with your desired color */
   }
@@ -52,16 +38,19 @@ body{
     color: black;
     
 }
-.login-title{
+.top h1{
     @include font-h2-extra-bold;
 }
-.lead{
+.top p{
     @include font-medium-normal;
 }
-.login-label{
+.form-group label{
     @include font-medium-normal;
 }
-.sub-label{
-    @include font-regular-normal;
+.form-check-label{
+    @include font-medium-medium;
+}
+a{
+    color: $light-turtoise;
 }
 

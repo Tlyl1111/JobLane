@@ -40,8 +40,11 @@ class SiteController {
     //ví dụ: file admin_dashboard trong thư mục admin thì đổi 'home' thành 'admin/admin_dashboard'
     //truy cập tới localhost:3101/theliem sẽ truy cập đc
     async theliem(req, res) {
-        res.render('apply_cv');
+        res.render('forget_pass'); // Explicitly set the layout
+        //res.render('signup_2', { layout: 'admin' });
     }
+    
+    
 
     
 }
