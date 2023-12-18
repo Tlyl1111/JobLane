@@ -1,14 +1,11 @@
 @import 'variables';
 @import 'typography';
 body{
-    font-family: $font-default;
-    background-color: white;
-    color: $dark-teal;
-    margin: 0; 
-    padding: 0; 
-    width: 965px;
-    height: 988px;
-    overflow-x: hidden;
+  font-family: $font-default;
+  color: $dark-teal;
+  background-color: white;
+  padding: 0;
+  margin: 0;
 }
 .color-1{
   color: $light-turtoise;
@@ -28,11 +25,8 @@ body{
     color: $dark-teal;
     @include font-large-medium;
     padding:8px 12px; 
-    .button-primary{
-        @extend .btn
-    }
-    .button-secondary{
-        @extend .btn;
+    
+    .btn-secondary{
         background-color: transparent;
         border: 1px solid $white;
         color: $white;
@@ -45,13 +39,83 @@ body{
     }
 }
 
-.hr {
+hr {
     border: none; 
     height: 2px; 
     background-color: $dark-teal; 
     margin: 12px;
+    margin-bottom: 40px;
   }
   .form-check-input {
     accent-color: $light-turtoise; 
+    width: 18px;
+    height: 18px;
   }
+  .modal {
+    display: block; /* Always show the modal */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top of other content */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Dimmed background */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: 10% auto; /* Margin around the modal box */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 965px; /* Width can be changed as per requirement */
+      height: 988px;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Adding some shadow */
+    }
+  }
+.title{
+  @include font-h4-extra-bold;
+  margin-bottom: 32px;
+}
+.infor{
+  margin-bottom: 32px;
+  .apply-label{
+    @include font-large-semi-bold;
+  
+  }
+  .form-group{
+    margin-bottom: 1rem;
+  }
+  .apply-label {
+    margin-bottom: 0.5rem; 
+  }
+}
+.cv{
+  margin-bottom: 32px;
+  .describe{
+    @include font-large-medium;
+  }
+}
+.save-cv{
+  margin-bottom: 32px;
+
+  .form-check-label{
+    @include font-large-normal;
+    margin-left: 4px;
+  }
+}
+.cover_letter{
+  .cover-label{
+    @include font-large-semi-bold;
+  }
+  
+}
+
+
+  
+
+  
+  
+  
+ 
+  
   

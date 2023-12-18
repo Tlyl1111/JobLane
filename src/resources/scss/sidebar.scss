@@ -1,0 +1,76 @@
+@import 'variables';
+@import 'typography';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-default;
+    color: $dark-teal;
+}
+body{
+    width: fit-content;
+    padding: 8px;
+}
+.color-1{
+    color: $light-turtoise;
+}
+.color-2{
+    color: $dark-teal;
+}
+.logo{
+    width: 180px;
+    height: 80px;
+
+}
+.logo img {
+    width: 100%;
+    height: auto; 
+}
+
+.side-bar {
+    position: fixed; /* or absolute, depending on your layout */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height of the viewport */
+    width: 232px;
+    background-color: $white;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
+    overflow: hidden; /* Hide overflow */
+    
+}
+
+.side-bar-content {
+    height: 100%;
+    overflow-y: auto; /* Scrollable content */
+    //padding-right: 30px; /* Adjust as needed, to push scrollbar out of view */
+    box-sizing: content-box; /* Keeps padding from adding to width */
+    margin-right: -30px; /* Negative margin to hide scrollbar */
+}
+.sub-title{
+    @include font-tiny-bold;
+}
+.side-bar ul li {
+    position: relative;
+    list-style-type: none;
+    height: 48px;
+    width: 200px;
+    line-height: 48px;
+}
+.side-bar ul li a{
+    color: $white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 0px 12px;
+}
+.side-bar ul li a:hover{
+background-color: #f2f2f2;
+}
+.nav-item{
+    margin-left: 8px;
+}
+.active-link{
+    background-color: $light-turtoise;
+}

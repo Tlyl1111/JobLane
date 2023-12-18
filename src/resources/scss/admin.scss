@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'typography';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-default;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: #F4F7FE;
+    color: $dark-teal;
+}
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+
+}
+.main_content {
+    width: calc(100% - 232px);
+    margin-left: 232px;
+    padding: 12px; 
+    flex-grow: 1;
+}
+.side_bar{
+    z-index: 100;
+}
+
+
+
+
+
+

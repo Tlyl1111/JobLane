@@ -1,0 +1,108 @@
+<head>
+    <link rel="stylesheet" href="/src/public/css/sidebar.css">
+</head>
+<body>
+    <div class="side-bar d-inline-flex flex-column">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <img src="/src/public/img/Logo/JL_admin.svg" alt="logo" class="logo">
+        </div>
+        <div class="side-bar-content">
+            <span class="sub-title">MAIN</span>
+            <ul>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Dashboard.svg" alt="">
+                    <span class="nav-item">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/JobPost.svg" alt="">
+                    <span class="nav-item">Job Post</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Employers.svg" alt="">
+                    <span class="nav-item">Employers</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/JobSeeker.svg" alt="">
+                    <span class="nav-item">Job Seekers</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Report.svg" alt="">
+                    <span class="nav-item">Report</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Systems.svg" alt="">
+                    <span class="nav-item">Systems</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Feedback.svg" alt="">
+                    <span class="nav-item">Feedback</span>
+                </a>
+            </li>
+           
+
+            </ul>
+        <div class="setting">
+            <span class="sub-title">SETTINGS</span>
+        </div>
+            <ul>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Settings.svg" alt="">
+                    <span class="nav-item">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Help-circle.svg" alt="">
+                    <span class="nav-item">Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/src/public/img/SideBar/Log-out.svg" alt="">
+                    <span class="nav-item" style="color: #D55F5A;">Logout Account</span>
+                </a>
+            </li> 
+            </ul>
+        </div>
+        
+    </div>
+    <script>
+    $(document).ready(function() {
+        // Function to check which section is in view
+        function checkSectionInView() {
+            var scrollPos = $(document).scrollTop();
+            $('.main_content section').each(function() {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                    $('.side-bar ul li a').removeClass("active-link");
+                    currLink.addClass("active-link");
+                } else {
+                    currLink.removeClass("active-link");
+                }
+            });
+        }
+
+        // Attach the function to the scroll event
+        $(document).on("scroll", checkSectionInView);
+
+        // Trigger the function to check on page load
+        checkSectionInView();
+    });
+    </script>
+
+</body>

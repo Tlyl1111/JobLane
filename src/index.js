@@ -24,8 +24,11 @@ app.engine(
   'hbs',
   handlebars({
       extname: '.hbs',
+      layoutsDir: path.join(__dirname, 'resources/views/layouts'), // specifying the directory for layout files
+      defaultLayout: 'main', // specify a default layout here, if you have one
   }),
 );
+
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 

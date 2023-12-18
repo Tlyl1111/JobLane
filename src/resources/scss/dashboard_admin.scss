@@ -1,0 +1,283 @@
+@import 'variables';
+@import 'typography';
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.color-1{
+  color: $light-turtoise;
+}
+.color-2{
+  color: $dark-teal;
+}
+.curent_page{
+  @include font-h3-extra-bold;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 4px 8px;
+  width: 568px; 
+  height: 48px;
+  margin-left: auto;
+  
+}
+
+
+.input-wrapper {
+  position: relative;
+  flex-grow: 1;
+  margin-right: 20px; /* Space between input and avatar */
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px; /* Adjust as needed */
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #F4F7FE; 
+  border-radius: 20px; 
+  padding: 5px 8px 5px 40px; 
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px; 
+  border-radius: 50%; /* Make avatar round */
+}
+
+.search-input::placeholder { color: #ccc; }
+.search-input:focus {
+  background-color: #F4F7FE; 
+}
+
+.stastic .sta{
+    width: 220px;
+    height: 96px;
+    background-color: white;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: start;
+    padding-left: 20px;
+    margin-right: 12px;
+
+    .number{
+        @include font-h5-extra-bold;
+    }
+    
+}
+
+.stastic .sta:last-child{
+    margin-right: 0;
+}
+.stastic img{
+    width: 56px;
+    height: 56px;
+    margin-right: 12px;
+}
+
+//===============================LINE 2================================================//
+
+.line-2{
+  width: auto;
+  height: 320px;
+  align-items: stretch;
+}
+:root {
+    --color-primary: #{$light-turtoise}; // Using SCSS variable for CSS custom property
+    --color-secondary: #6AD2FF;
+    --font-family: #{$font-default}; // Using SCSS variable for CSS custom property
+    --color-text: #{$dark-teal};
+    --color-label: #a7a7a7;
+    --color-bg: white;
+}
+
+
+
+
+.card {
+  position: relative;
+  width: 580px;
+  margin-right: 30px;
+  height: fit-content;
+  background: white;
+  padding: 30px;
+  border: none;
+  border-radius: 24px;
+}
+
+.card h2 {
+  @include font-h5-extra-bold;
+
+  margin: 0 0 2px;
+}
+
+.card p {
+  color: $dark-teal;
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.card .pulse {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  background: var(--color-primary);
+  top: 52px;
+  right: 40px;
+  border-radius: 50%;
+}
+
+.card .pulse::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+  left: -1px;
+  top: -2px;
+  animation: pulse 2s linear infinite;
+  transform-origin: center;
+  opacity: 0.8;
+  scale: 0;
+}
+
+@keyframes pulse {
+  70% {
+    scale: 0;
+    opacity: 0.8;
+  }
+
+  100% {
+    scale: 2;
+    opacity: 0;
+  }
+}
+
+.card .chart-area {
+  position: relative;
+}
+
+//=======================================================//
+
+.container-cal {
+    width: fit-content;
+    display: grid;
+    place-items: center;
+    
+}
+
+.content-cal {
+    width: 300px; 
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+header {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .current-date {
+  @include font-small-bold;
+}
+
+header .icons {
+    color: gray;
+    display: flex;
+    gap: 0.5rem; 
+}
+
+header .icons button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: none ;
+  width: 24px; /* Smaller width */
+  height: 24px; /* Smaller height */
+  cursor: pointer;
+  background-color: #f9f6f6;
+  border-radius: 50%;
+}
+
+header .icons button:hover {
+    background-color: #bdbdbd;
+    color: antiquewhite;
+}
+
+.calendar {
+    padding: 0.5rem; /* Smaller padding */
+    @include font-tiny-semi-bold;
+
+}
+
+.calendar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* This can help in spacing the elements */
+}
+
+.calendar ul li {
+    width: calc(100% / 7); /* Keeping the width relative to the container */
+}
+
+.calendar .days li {
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 10px; /* Reduced margin */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.days li::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 28px; /* Smaller size */
+    height: 28px; /* Smaller size */
+    background-color: transparent;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.days li.active {
+    color: white;
+}
+
+.days li.inactive {
+    color: #717171;
+}
+
+.days li:hover::before {
+    background-color: #d6d2d2;
+}
+
+.days li.active::before {
+    background-color: rgb(23, 3, 138);
+}
+
+
+
+
