@@ -11,34 +11,19 @@ body{
     height: 20px;
 }
 
-.btn{
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    width: fit-content;
+.form-inline button{
+    padding: 5px 15px;
     background-color: $light-turtoise;
     border-radius: 100px;
-    margin: 10px 0; 
     border: none;
-    color: $dark-teal;
     @include font-large-medium;
-    padding:8px 12px; 
-    .button-primary{
-        @extend .btn
-    }
-    .button-secondary{
-        @extend .btn;
-        background-color: transparent;
-        border: 1px solid $white;
-        color: $white;
-        padding: 8px 12px;
-        
-        &:hover {
-            background-color: $white; 
-            color: $dark-teal; 
-        }
-    }
 }
+.form-inline button:hover{
+    background-color: #fefefe;
+    border: 1px solid $dark-teal;
+}
+
+
 .list-unstyled{
     text-align: left;
 }

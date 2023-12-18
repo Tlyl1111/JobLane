@@ -1,0 +1,187 @@
+@import 'variables';
+@import 'typography';
+
+.color-1{
+  color: $light-turtoise;
+}
+.color-2{
+  color: $dark-teal;
+}
+.curent_page{
+  @include font-h3-extra-bold;
+}
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 4px 8px;
+  width: 568px; 
+  height: 48px;
+  margin-left: auto;
+  
+}
+
+
+.input-wrapper {
+  position: relative;
+  flex-grow: 1;
+  margin-right: 20px; /* Space between input and avatar */
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px; /* Adjust as needed */
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #F4F7FE; 
+  border-radius: 20px; 
+  padding: 5px 8px 5px 40px; 
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px; 
+  border-radius: 50%; /* Make avatar round */
+}
+
+.search-input::placeholder { color: #ccc; }
+.search-input:focus {
+  background-color: #F4F7FE; 
+}
+
+
+.tab-box {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid rgba(229, 229, 229);
+    font-size: 18px;
+
+}
+.tab-box .tab-btn {
+  font-size: 18px;
+  font-weight: 600;
+  color: #919191;
+  background: none;
+  border: none;
+  padding: 18px;
+  cursor: pointer;
+}
+.tab-box .tab-btn.active{
+  color: $light-turtoise;
+  position: relative; /* Add this to ensure the z-index applies correctly */
+}
+.content-box{
+  padding-top: 20px;
+}
+.content-box .content{
+  display: none;
+}
+.line {
+  position: absolute;
+  left: 0; 
+  width: 60px; 
+  height: 5px;
+  background-color: $light-turtoise; /* Your active color */
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+table{
+  width: 940px;
+  height: 60px;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+th{
+  background-color: $light-turtoise;
+}
+td,th{
+  padding: 8px 8px;
+
+}
+tr:nth-child(odd){
+  background-color: white;
+}
+button {
+  padding: 2px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  @include font-regular-normal;
+  transition: background-color 0.3s ease;
+  border-radius: 100px;
+  margin-right: 4px;
+}
+
+
+.contact {
+  background-color: transparent; 
+  color: $dark-teal;
+  border: 1px solid $dark-teal;
+}
+
+.contact:hover {
+  background-color: #f2f2f2;
+}
+
+
+.view {
+  background-color: #2ED5A4; /* Blue */
+  color: $dark-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.view:hover {
+  background-color: #24aa83; /* Darker teal for hover */
+}
+
+.view img {
+  margin-left: 5px;
+}
+.table-control {
+  bottom: 0;
+  padding: 10px;
+  border-radius: 4px;
+  @include font-tiny-normal;
+}
+
+
+.rows-per-page label {
+  margin-right: 5px;
+}
+
+.rows-per-page select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1px 8px;
+  outline: none;
+}
+
+.pagination-info {
+  margin: 0 15px; /* Gives some space between elements */
+}
+
+.pagination-controls button {
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-controls button:hover {
+  background-color: #f2f2f2; /* A light hover effect */
+}

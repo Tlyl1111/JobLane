@@ -4,38 +4,60 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/public/css/job_posting_detail.css">
+    <link rel="stylesheet" href="/src/public/css/apply_cv.css">
     
 </head>
-<body>
-    <div class="title">
-        <span class="color-1">Apply for</span>
-        <span class="color-2">Specialist Digital Marketing/Content Marketing</span>
-    </div>
-    <div class="infor"> 
-        <div class="form-group">
-            <label class="login-label" for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp">
+<body> 
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="title">
+            <span class="color-1">Apply for</span>
+            <span class="color-2">Specialist Digital Marketing/Content Marketing</span>
         </div>
-        <div class="form-group">
-            <label class="login-label" for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" name="Password" id="Password">
-        </div>
-
-    </div>
-    <div class="cv">
-        <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label sub-label" for="exampleCheck1">Remember me</label>
+        <hr>
+        <form class="infor"> 
+            <div class="form-row">
+                <div class="col mb-3">
+                    <label class="apply-label" for="FullName">Full Name</label>
+                    <input type="text" class="form-control" name="FullName" id="FullName">
+                </div>
             </div>
+            <div class="form-row ">    
+                <div class="col form-group">
+                    <label class="apply-label" for="Email">Email</label>
+                    <input type="email" class="form-control" name="Email" id="Email">
+                </div>
+                <div class="col form-group">
+                   <label class="apply-label" for="PhoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control" name="PhoneNumber" id="PhoneNumber">
+                </div>
+            </div>
+        </form>
+        <div class="cv row">
+            <div class="col-8 describe">
+                Upload CV from Computer <br>
+                File types: pdf. Maximum size: 5MB.
+            </div>
+            <button class="col-2 btn btn-primary align-self-center">
+                Upload CV
+                <img src="/src/public/img/Upload.svg" alt="">
+            </button>
+        </div>
+        <div class="save-cv d-flex">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label sub-label" for="exampleCheck1">Save CV (Used for management in the CV Portfolio and helps Employers reach out to you)</label>
+            </div>
+            
+        </div>
+        <div class="cover-letter">
+            <label class="cover-label" for="cover-letter">Cover Letter</label>
+            <textarea class="form-control" id="cv-lt" rows="8" placeholder="Write a brief introduction about yourself (strengths, weaknesses) if desired, the reason for working at this company. This is a way to impress the recruiter if you do not have work experience (or a poor CV)."></textarea>
+        </div>
+        <div class="action d-inline-flex justify-content-start mt-5">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary ml-5">Apply CV</button>
+        </div>
     </div>
-    <div class="save-cv">
-
-    </div>
-    <div class="cover-letter">
-
-    </div>
-    <div class="action">
-
     </div>
 </body>

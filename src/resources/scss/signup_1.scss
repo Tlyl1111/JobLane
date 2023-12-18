@@ -1,5 +1,12 @@
 @import 'variables';
 @import 'typography';
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: $font-default;
     background-color: white;
@@ -8,25 +15,29 @@ body{
 .w-30 {
     width: 30%;
 }
-.custom-logo {
-    width: 80px;
-    height: auto;
-  }
-  .btn.btn-primary {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
+.top img{
+    width: 104px;
+    height: 104px;
+}
+.form-group button{
+    width: 100%;
+    padding: 20px;
+    color: $dark-teal;
+
     background-color: $light-turtoise;
     border-radius: 100px;
-    border-color: $light-turtoise;
-    margin: 10px 0; 
+    border: none;
+    @include font-large-semi-bold;
+}
+.form-group button:hover{
+    background-color: #fefefe;
     color: $dark-teal;
-    @include font-large-medium;
-    padding: 5px; 
+
+    border: 2px solid $dark-teal;
 }
-.lead{
-    @include font-h4-extra-bold;
-}
-.login-title{
+.top h1{
     @include font-h2-extra-bold;
+}
+.top p{
+    @include font-h4-extra-bold;
 }
