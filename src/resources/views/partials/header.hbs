@@ -6,54 +6,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/public/css/header.css">
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="/img/logoJL.png" alt="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+{{#if user}}
+  {{#if user.isJobseeker}}
+    <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logoJL.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Jobs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Applied Jobs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav my-2 my-lg-0">
-          <li class="nav-item">
-              <a class="item button" href="#" role="button">Login</a> 
-              <a class="nav-item nav-item-divider align-middle"></a>
-              <a class="item button secondary" href="#" role="button">Register</a>
-          </li>
-          <li class="nav-item d-inline-block d-sm-flex align-items-center">
-            <span class="notification-icon ml-5">
-              <img src="/img/bell-ring.png" alt="bell icon">
-            </span>
-          </li>
-          <li class="nav-item dropdown d-inline-block d-sm-flex align-items-center">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="/img/Avatar.png" alt="Avatar">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Settings</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-      
-</nav>
+        <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Applied Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About us</a>
+                    </li>
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item">
+                <a class="item button" href="/signin" role="button">Login</a> 
+                <a class="nav-item nav-item-divider align-middle"></a>
+                <a class="item button secondary" href="/signup" role="button">Register</a>
+            </li>
+            <li class="nav-item d-inline-block d-sm-flex align-items-center">
+              <span class="notification-icon ml-5">
+                <img src="/img/bell-ring.png" alt="bell icon">
+              </span>
+            </li>
+            <li class="nav-item dropdown d-inline-block d-sm-flex align-items-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/img/Avatar.png" alt="Avatar">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+  </nav>
+  </body>
+  {{else}}
+    {{#if user.isEmployer}}
+    <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logoJL.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Posting</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Applicants</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About us</a>
+                    </li>
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item">
+                <a class="item button" href="/signin" role="button">Login</a> 
+                <a class="nav-item nav-item-divider align-middle"></a>
+                <a class="item button secondary" href="/signup" role="button">Register</a>
+            </li>
+            <li class="nav-item d-inline-block d-sm-flex align-items-center">
+              <span class="notification-icon ml-5">
+                <img src="/img/bell-ring.png" alt="bell icon">
+              </span>
+            </li>
+            <li class="nav-item dropdown d-inline-block d-sm-flex align-items-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/img/Avatar.png" alt="Avatar">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>   
+  </nav>
 </body>
+    {{else}}
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logoJL.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                    
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item">
+                <a class="item button" href="/signin" role="button">Login</a> 
+                <a class="nav-item nav-item-divider align-middle"></a>
+                <a class="item button secondary" href="/signup" role="button">Register</a>
+            </li>
+            <li class="nav-item d-inline-block d-sm-flex align-items-center">
+              <span class="notification-icon ml-5">
+                <img src="/img/bell-ring.png" alt="bell icon">
+              </span>
+            </li>
+            <li class="nav-item dropdown d-inline-block d-sm-flex align-items-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/img/Avatar.png" alt="Avatar">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+  </nav>
+</body>
+  {{/if}}
+  {{/if}}
+{{else}}
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/img/logoJL.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse align-items-center" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                    
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item">
+                <a class="item button" href="/signin" role="button">Login</a> 
+                <a class="nav-item nav-item-divider align-middle"></a>
+                <a class="item button secondary" href="/signup" role="button">Register</a>
+            </li>
+            <li class="nav-item d-inline-block d-sm-flex align-items-center">
+              <span class="notification-icon ml-5">
+                <img src="/img/bell-ring.png" alt="bell icon">
+              </span>
+            </li>
+            <li class="nav-item dropdown d-inline-block d-sm-flex align-items-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="/img/Avatar.png" alt="Avatar">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+  </nav>
+</body>
+{{/if}}

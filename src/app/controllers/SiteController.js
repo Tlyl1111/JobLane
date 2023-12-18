@@ -31,6 +31,10 @@ class SiteController {
         res.render('signin');
     }
 
+    async signup(req, res) {
+        res.render('home');
+    }
+
     //cần navigate trang nào thì đổi 'home' thành file đó nhé
     //note: nếu có trong thư mục các role thì dẫn luôn thư mục 
     //ví dụ: file admin_dashboard trong thư mục admin thì đổi 'home' thành 'admin/admin_dashboard'
