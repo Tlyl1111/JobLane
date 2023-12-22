@@ -17,6 +17,9 @@
 }
 .search-container {
   display: flex;
+  position: fixed;
+    top: 24px;
+    right: 8px;
   align-items: center;
   background-color: white;
   border-radius: 20px;
@@ -90,9 +93,10 @@
 //===============================LINE 2================================================//
 
 .line-2{
-  width: auto;
+  width: 100%;
   height: 320px;
   align-items: stretch;
+  overflow: hidden;
 }
 :root {
     --color-primary: #{$light-turtoise}; // Using SCSS variable for CSS custom property
@@ -275,7 +279,33 @@ header .icons button:hover {
 }
 
 .days li.active::before {
-    background-color: rgb(23, 3, 138);
+    background-color: $light-turtoise;
+}
+
+.quick-act{
+  width: 512px;
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+}
+.quick-act a{
+  padding: 12px;
+  padding-left: 20px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: $dark-teal;
+  cursor: pointer;
+}
+.quick-act a:hover{
+  background-color: $light-turtoise;
+}
+.quick-act img{
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
 }
 
 
