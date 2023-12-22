@@ -1,0 +1,186 @@
+@import 'variables';
+@import 'typography';
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $dark-teal;
+}
+.color-1{
+  color: $light-turtoise;
+}
+.color-2{
+  color: $dark-teal;
+}
+.w-30{
+  width: 30%;
+}
+
+.curent_page{
+    @include font-h3-extra-bold;
+  }
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: 568px; 
+    height: 48px;
+    margin-left: auto;
+    
+  }
+  
+  
+  .input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin-right: 20px; /* Space between input and avatar */
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px; /* Adjust as needed */
+  }
+  
+  .search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #F4F7FE; 
+    border-radius: 20px; 
+    padding: 5px 8px 5px 40px; 
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px; 
+    border-radius: 50%; /* Make avatar round */
+  }
+  
+  .search-input::placeholder { color: #ccc; }
+  .search-input:focus {
+    background-color: #F4F7FE; 
+  }
+  
+button {
+  padding: 4px 12px;
+  border: none;
+  cursor: pointer;
+  @include font-large-medium;
+  transition: background-color 0.3s ease;
+  border-radius: 100px;
+  margin-right: 4px;
+}
+.back {
+  background-color: transparent; 
+  color: $dark-teal;
+  border: 2px solid $dark-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back:hover {
+  background-color: #f2f2f2; /* Darker teal for hover */
+}
+
+.back img {
+  margin-right: 5px;
+}
+.infor{
+  width: 475px;
+  height: fit-content;
+  background-color: white;
+  border-radius: 20px;
+  padding: 56px 32px;
+}
+.infor img{
+  width: 140px;
+  height: 140px;
+  align-self: center;
+  border-radius: 100px;
+  border: 3px solid $light-turtoise;
+  margin-bottom: 16px;
+}
+.infor h6, p{
+  display: inline;
+}
+.infor h6{
+  @include font-large-semi-bold;
+
+}
+.infor p{
+  @include font-medium-normal;
+}
+
+.quick-act{
+  width: 460px;
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  margin-left: 12px;
+
+}
+.quick-act a{
+  padding: 12px;
+  padding-left: 20px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: $dark-teal;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.quick-act a:hover{
+  background-color: $light-turtoise;
+}
+.quick-act img{
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+.quick-act h5{
+  @include font-h5-extra-bold;
+}
+.list a{
+  padding: 12px;
+  padding-left: 20px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: $dark-teal;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.list{
+  width: 460px;
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  margin-left: 12px;
+  margin-top: 12px;
+
+}
+.list-item img{
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+.list a:hover{
+  background-color: $light-turtoise;
+}
+.list-item h6{
+  @include font-h6-extra-bold; 
+}
+.list-item p{
+  @include font-medium-normal;
+}
+.list h5{
+  @include font-h5-extra-bold
+}
+
