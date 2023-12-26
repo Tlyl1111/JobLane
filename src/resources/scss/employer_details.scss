@@ -15,7 +15,6 @@ body{
     display: flex;
     justify-content: center; 
     align-items: center; 
-    width: fit-content;
     background-color: $light-turtoise;
     border-radius: 100px;
     margin: 10px 0; 
@@ -106,7 +105,6 @@ label{
         background-color: $light-turtoise;
     }
     justify-content: center;
-    width:fit-content;
     align-items: center;
 }
 input[type="file"] {
