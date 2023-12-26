@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const JobDetail = new Schema({
-    KeyJD: String,
     Type: String,
-    Category: Array,
+    Category: String,
     Specialization: String,
     CompanyType: String,
     Field: String,
@@ -14,9 +13,11 @@ const JobDetail = new Schema({
     Experience: String,
     Location: String,
     Requirement: String,
-    ApplyBtn: String,
+    //ApplyBtn: String,
     HiringProcess: String,
     HowtoApply: String,
+    JobID: { type: mongoose.Schema.Types.ObjectId, ref: 'Job'},
+    CompanyID: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},  
   });
 
 module.exports = mongoose.model('JobDetail', JobDetail, 'jobdetails');

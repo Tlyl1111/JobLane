@@ -2,18 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Job = new Schema({
-    KeyJob: String,
     Title: String,
-    QuantityApply: String,
+    QuantityApply: { type: Number, default: 0 },
     //State: String,
     PostDay: Date,
     EndDay: Date,
-    KeyJD: String,
-    KeyCompany: String,
-    Status: String,
+    Status: {type: String, default: 'assessing'},
     //Status = assessing: đang đánh giá
     //Status = approved: được duyệt
     //Status = rejected: không được duyệt
+    CompanyID: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},
+    JobDetailID: { type: mongoose.Schema.Types.ObjectId, ref: 'JobDetail'},
   });
 
 module.exports = mongoose.model('Job', Job, 'jobs');
