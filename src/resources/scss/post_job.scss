@@ -1,0 +1,125 @@
+@import 'variables';
+@import 'typography';
+body{
+    font-family: $font-default;
+    background-color: white;
+}
+.background{
+    background-color: $light-turtoise;
+}
+.w-30 {
+    width: 30%;
+}
+.custom-logo {
+    width: 80px;
+    height: auto;
+  }
+.btn{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: fit-content;
+    background-color: $light-turtoise;
+    border-radius: 100px;
+    margin: 10px 0; 
+    border: none;
+    color: $dark-teal;
+    @include font-large-medium;
+    padding:8px 12px; 
+    .button-primary{
+        @extend .btn
+    }
+    .button-secondary{
+        @extend .btn;
+        background-color: transparent;
+        border: 1px solid $white;
+        color: $white;
+        padding: 8px 12px;
+        
+        &:hover {
+            background-color: $white; 
+            color: $dark-teal; 
+        }
+    }
+}
+.form-control{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 1px solid $muted-teal;
+    border-radius: 8px;
+    .form-item{
+        border: 1px solid $muted-teal;
+    }
+}
+.title{
+    @include font-large-semi-bold;
+}
+.lead{
+    @include font-medium-normal;
+}
+.text{
+    @include font-medium-semi-bold;
+}
+.sub-label{
+    @include font-regular-normal;
+}
+.img{
+    border: 5px solid $light-turtoise;
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+}
+.large-box{
+    height: 200px;
+    box-sizing: border-box;
+}
+.textarea {
+    height: 200px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    resize: none;
+}
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box {
+    margin: 0 auto;
+    padding: 10px;
+    height: 150px;
+    width: 350px;
+    border-style: dashed;
+    border-radius:20px ;
+    border-color: $light-turtoise;
+}
+input[type="file"] {
+    background-color: transparent;
+}
+.icon {
+    background: url('/src/public/img/Upload.svg');
+    height: 30px;
+    width: 30px;
+    display: block;
+    /* Other styles here */
+}
+label{
+    border: 1px solid $muted-teal;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    &:hover{
+        background-color: $light-turtoise;
+    }
+    justify-content: center;
+    width:fit-content;
+    align-items: center;
+}
+input[type="file"] {
+    display: none;
+}
+.opacity{
+    opacity: 0.5;
+}

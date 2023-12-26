@@ -1,1 +1,153 @@
-<h1>Job Posting Action</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/public/css/post_job.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-center mt-5">
+      <div class="title">Hi, Tom Cruise</div>
+      <p class="sub-title">Empower Your Recruitment: Post Jobs and Find Talent Here!</p>
+    </div>
+    <br><br>
+    <div class="row">
+      <div class="col">
+        <form class="needs-validation" novalidate></form>
+        <div class="jobtitle">
+          <p class="text" for="JobTitle">Job Title</p>
+          <input type="text" class="form-control" id="JobTitle" placeholder="" required>
+          <div class="invalid-feedback">
+            Please enter the Job title.
+          </div>
+        </div>
+        <div class="row categories">
+          <p class="text" for="Categories">Category</p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <input type="text" class="form-control" id="Category1" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <input type="text" class="form-control" id="Category2" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <input type="text" class="form-control" id="Category3" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row location jobtype companytype">
+          <div class="row">
+
+            <div class="col-md-4 mb-3">
+              <p class="text" for="Location">Location</p>
+              <input type="text" class="form-control" id="Location" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <p class="text" for="JobType">Job Type</p>
+              <input type="text" class="form-control" id="JobType" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <p class="text" for="CompanyType">Company Type</p>
+              <input type="text" class="form-control" id="CompanyType" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row spec exp salary">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <p class="text" for="Specialization">Specialization</p>
+              <input type="text" class="form-control" id="Specialization" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <p class="text" for="Experience">Experience</p>
+              <input type="text" class="form-control" id="Experience" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <p class="text" for="Salary">Salary</p>
+              <input type="text" class="form-control" id="Salary" placeholder="" value="" required>
+              <div class="invalid-feedback">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row end date">
+          <div class="col">
+            <p class="text" for="EndDate">End of post date</p>
+            <input type="date" class="form-control" id="EndDate" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid end date is required.
+            </div>
+          </div>
+        </div>
+        <div class="jobimage">
+          <p class="text">Image</p>
+          <div class="box center">
+            <p class="text-center">Select or Drag and Drop here</p>
+            <p class="text-center opacity"> <span style="color:gray">PNG, SVG file size no more than 10MB</span></p>
+            <label class="center text-center" for="PostImage">Select file</label>
+            <input type="file" id="PostImage" name="Company-logo" accept="image/png, image/jpeg" class="lg-center">
+          </div> <br>
+        </div>
+      </div>
+      <div class="col">
+        <form class="needs-validation" novalidate>
+          <div class="row">
+          </div>
+          <div class="jobbenefit">
+            <p class="text" for="Description">Job Benefits/</p>
+            <textarea type="text" class="form-control" id="Description" rows="5" placeholder="" required></textarea>
+            <div class="invalid-feedback">
+              Please enter your Company Description.
+            </div>
+          </div>
+          <div class="jobrequire">
+            <p class="text" for="Goal">Job Requirement</p>
+            <textarea type="text" class="form-control" id="Goal" rows="5" placeholder="" required></textarea>
+            <div class="invalid-feedback">
+              Please enter your Company Goal.
+            </div>
+          </div>
+          <div class="hiringprocess">
+            <p class="text" for="CompanyAdress">Hiring Process</p>
+            <textarea type="text" class="form-control" id="CompanyAddress" rows="5" placeholder="" required></textarea>
+            <div class="invalid-feedback">
+              Please enter your Company Adress.
+            </div>
+          </div>
+          <div class="howtoapply">
+            <p class="text" for="CompanyEmail">How to apply</p>
+            <textarea type="text" class="form-control" id="CompanyEmail" rows="5" placeholder="" required></textarea>
+            <div class="invalid-feedback">
+              Please enter your Company Email.
+            </div>
+          </div>
+      </div>
+    </div>
+    <br> <br>
+    <div class="form-group w-30 m-auto">
+      <button type="submit" class="btn btn-primary w-100">Post Job</button>
+    </div>
+  </div>
+</body>

@@ -11,27 +11,31 @@
         <div class="title">Hi, Tom Cruise</div>
         <p class="sub-title">Your Profile</p>
     </div>
+    <br><br>
     <div class="container">
-        <div class="row">
+      <div class="row">
             <div class="col-6">
-                <div class="Avatar">
-                    <img src="/src/public/img/Avatar-largesize.jpg" class="img" alt="">
-                    <div class="profile-avatar">Edit your Avatar</div>
-                    <div>
-                        <input type="file" id="jobseeker-avatar" name="jobseeker-avatar" accept="image/png, image/jpeg">
-                    </div> <br>
+              <div class="row">
+                <div class="Avatar center">
+                      <img src="/src/public/img/Avatar-largesize.jpg" class="img" alt="">
+                       <p></p>           
+                        <label class="center" for="employer-avatar">Select a new avatar</label>
+                        <input type="file" id="employer-avatar" name="employer-avatar" accept="image/png, image/jpeg">
+                    <br>
                 </div>
+            </div>
+          
             <form class="needs-validation" novalidate></form>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
+                <p class="text" for="firstName">First name</p>
                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
+                <p class="text" for="lastName">Last name</p>
                 <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
@@ -39,28 +43,28 @@
               </div>
             </div>    
             <div class="mb-3">
-              <label for="email">Email</label>
+              <p class="text" for="email">Email</p>
               <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div>
             </div>
             <div class="mb-3">
-              <label for="email">Phone</label>
+              <p class="text" for="phone">Phone</p>
               <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
               <div class="invalid-feedback">
-                Please enter a valid email address.
+                Please enter a valid phone number.
               </div>
             </div>
             </div>
         <div class="col-6">
             <div class="Company">
-                <label class="profile-avatar title">Your company</label>
+                <p class="title">Your company</p>
             </div>
             <form class="needs-validation" novalidate>
             <div class="mb-3">
-              <label for="address">Company Name</label>
-              <input type="text" class="form-control" id="Companyname" placeholder="1234 Main St" required>
+              <p class="text" for="address">Company Name</p>
+              <input type="text" class="form-control" id="Companyname" placeholder="" required>
               <div class="invalid-feedback">
                 Please enter your company name.
               </div>
@@ -69,46 +73,48 @@
             <div class="row">
             </div>
             <div class="mb-3">
-              <label for="Biography">Company Description</label>
-              <input type="text" class="form-control" id="Description" placeholder="" required>
+              <p class="text" for="Description">Company Description</p>
+              <textarea type="text" class="form-control" id="Description" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
-                Please enter your company description.
+                Please enter your Company Description.
               </div>
             </div>
             <div class="mb-3">
-              <label for="Biography">Company Goal</label>
-              <input type="text" class="form-control" id="Goal" placeholder="" required>
+              <p class="text" for="Goal">Company Goal</p>
+              <textarea type="text" class="form-control" id="Goal" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
-                Please enter your address.
+                Please enter your Company Goal.
               </div>
             </div>
             <div class="mb-3">
-              <label for="Biography">Company Adress</label>
-              <input type="text" class="form-control" id="CompanyAdress" placeholder="" required>
+              <p class="text" for="CompanyAdress">Company Adress</p>
+              <textarea type="text" class="form-control" id="CompanyAddress" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
-                Please enter your address.
+                Please enter your Company Adress.
               </div>
             </div>
             <div class="mb-3">
-              <label for="Biography">Company Email</label>
-              <input type="text" class="form-control" id="CompanyEmail" placeholder="" required>
+              <p class="text" for="CompanyEmail">Company Email</p>
+              <textarea type="text" class="form-control" id="CompanyEmail" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
-                Please enter your address.
+                Please enter your Company Email.
               </div>
             </div>
             <div class="Company-logo">
-                    <label class="profile-avatar">Edit your Company Logo</label>
-                    <div>
-                        <input type="file" id="CompanyLogo" name="Company-logo" accept="image/png, image/jpeg">
+              <p class="text">Edit your Company Logo</p>
+              <div class="box center">  
+                        <p class="text-center">Select or Drag and Drop here</p>
+                        <p  class="text-center opacity"> <span style="color:gray">PNG, SVG file size no more than 10MB</span></p>
+                        <label class="center text-center" for="CompanyLogo">Select file</label>
+                        <input type="file" id="CompanyLogo" name="Company-logo" accept="image/png, image/jpeg" class="lg-center">
                     </div> <br>
+                  </div>                    
                 </div>
-            </div>
-            <hr class="mb-4"> 
-        <div class="form-group w-30 m-auto">
-            <button type="submit" class="btn btn-primary w-100">Save changes</button>
-        </div>
-        </div>
-        <div>
-        </div>
-    </div> 
+      </div>
+
+      <div class="form-group w-30 m-auto">
+        <button type="submit" class="btn btn-primary w-100">Save changes</button>
+      </div>
+      </div>
+  
 </body>
