@@ -29,6 +29,44 @@ class SiteController {
     /* async home(req, res) {
         res.render('home');
     } */
+
+
+    
+    async calculateTimeRemaining(endDate) {
+        const now = new Date();
+        const end = new Date(endDate);
+        const timeRemaining = end - now;
+      
+        if (timeRemaining > 0) {
+          // Chuyển đổi thời gian từ milliseconds sang ngày
+          const daysRemaining = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+          return daysRemaining;
+        } else {
+          // Nếu công việc đã kết thúc, trả về 0
+          return 0;
+        }
+      }
+      
+      // Hàm async để lấy tất cả công việc và tính thời gian còn lại
+    async calculateJobs(req, res) {
+        try {
+          
+          const jobs = await Job.find({}).exec(); // Đợi cho đến khi lấy được tất cả công việc
+          
+          const jobsWithTimeRemaining = await Promise.all(jobs.map(async (job) => {
+            const daysRemaining = await this.calculateTimeRemaining(job.EndDay);
+            // Return a new object with all original job fields and the added daysRemaining
+            return { ...job.toObject(), daysRemaining };
+          }));
+          
+          // Send the enhanced jobs array as a response
+          res.json(jobsWithTimeRemaining);
+          
+        } catch (err) {
+          console.error(err);
+        }
+    }
+      
     
     async signin(req, res) {
         res.render('signin');

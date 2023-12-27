@@ -22,8 +22,10 @@
                 
                 </div>
             </div>
-            <div class="col-8">
-              <form class="needs-validation" novalidate>
+            
+              <div class="col-8">
+              <form id="profile" action="/your_profile" method="post"  class="needs-validation" novalidate>
+            
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -82,9 +84,56 @@
         <div class="form-group w-30 m-auto">
             <button type="submit" class="btn btn-primary w-100">Save changes</button>
         </div>
+        
             </div>
+            
         </div>
         <div>
         </div>
     </div> 
 </body>
+<script>
+// Lưu trạng thái form vào sessionStorage khi form thay đổi
+function saveFormState() {
+
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
+  const email = document.getElementById('email').value;
+  const address = document.getElementById('address').value;
+  const phone = document.getElementById('phone').value;
+  const Birthday = document.getElementById('Birthday').value;
+  const Biography = document.getElementById('Biography').value;
+
+  // Lưu giá trị khác theo cách tương tự
+
+  sessionStorage.setItem('profile', JSON.stringify({ firstName, lastName, email, address, phone, Birthday, Biography }));
+}
+
+// Đính kèm sự kiện 'change' hoặc 'input' để lưu trạng thái form
+document.getElementById('firstName').addEventListener('input', saveFormState);
+document.getElementById('lastName').addEventListener('input', saveFormState);
+document.getElementById('email').addEventListener('input', saveFormState);
+document.getElementById('address').addEventListener('input', saveFormState);
+document.getElementById('phone').addEventListener('input', saveFormState);
+document.getElementById('Birthday').addEventListener('input', saveFormState);
+document.getElementById('Biography').addEventListener('input', saveFormState);
+
+// Lắng nghe sự kiện cho các input khác tương tự
+</script>
+<script>
+window.onload = function() {
+  // Khôi phục trạng thái form từ sessionStorage
+  const savedData = JSON.parse(sessionStorage.getItem('profile'));
+  if (savedData) {
+    document.getElementById('firstName').value = savedData.firstName || '';
+    document.getElementById('lastName').value = savedData.lastName || '';
+    document.getElementById('email').value = savedData.email || '';
+    document.getElementById('address').value = savedData.address || '';
+    document.getElementById('phone').value = savedData.phone || '';
+    document.getElementById('Birthday').value = savedData.Birthday || '';
+    document.getElementById('Biography').value = savedData.Biography || '';
+
+    // Khôi phục giá trị khác theo cách tương tự
+  }
+}
+</script>

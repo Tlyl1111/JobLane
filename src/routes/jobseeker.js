@@ -11,5 +11,6 @@ router.use('/applied_list', jobseekerController.applied_job_list);
 router.use('/favorite_job', jobseekerController.bookmarked_job_list);
 
 router.use('/job_posting_detail', jobseekerController.job_posting_detail);
+router.post('/your_profile', jobseekerController.your_profile);
 
 module.exports = router;

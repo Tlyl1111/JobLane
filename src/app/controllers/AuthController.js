@@ -183,7 +183,7 @@ class AuthController {
           {
             res.status(400).send('Mật khẩu không trùng khớp');
           }
-          console.log(check)
+          
           if(check == 'on') {
             const role =  req.session.role;
             const newAccount = await this.createNewAccount(role);
