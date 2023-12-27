@@ -48,7 +48,7 @@ class JobseekerController {
         const bio = req.body.Biography;
 
         const name = Fname + Lname;
-        await User.findByIdAndUpdate(userId, { $set: { Name: name} },{ new: true, useFindAndModify: false }).exec();
+        await User.findByIdAndUpdate(userId, { $set: { Name: name} },{ new: true, useFindAndModify: false });
         
         res.status(500).redirect('/');
     }
