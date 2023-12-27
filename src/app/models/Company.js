@@ -12,6 +12,7 @@ const Company = new Schema({
     Logo: String,
     Address: String,
     Email: String,
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   });
 
 module.exports = mongoose.model('Company', Company, 'companies');

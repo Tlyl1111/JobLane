@@ -4,6 +4,7 @@ const router = express.Router();
 const siteController = require('../app/controllers/SiteController');
 
 
+router.use('/find', siteController.find);
 router.use('/theliem', siteController.theliem);
 router.use('/signup', siteController.signup);
 //add site ở trên dòng này

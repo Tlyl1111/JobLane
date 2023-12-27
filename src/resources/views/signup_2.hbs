@@ -13,7 +13,7 @@
         <p>Joblane - Your Journey to the Right Job!</p>
     </div>
     
-    <form class="mb-5 w-30 mx-auto" id="login" action="/auth" method="post">
+    <form class="mb-5 w-30 mx-auto" id="signup" action="/update-account" method="post">
         <div class="form-group mb-3">
             <label for="exampleInputName1">Name</label>
             <input type="text" class="form-control" name="Name" id="Name">
@@ -31,7 +31,7 @@
             <input type="password" class="form-control" name="CPassword" id="CPassword">
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <input type="checkbox" class="form-check-input" name="check" id="exampleCheck1">
             <label class="form-check-label ml-2" for="exampleCheck1">I agree with Terms and Privacy</label>
         </div>
         <div class="form-group">
@@ -46,3 +46,30 @@
 
 
 </body>
+<script>
+// Lưu trạng thái form vào sessionStorage khi form thay đổi
+function saveFormState() {
+  const name = document.getElementById('Name').value;
+  const email = document.getElementById('Email').value;
+  // Lưu giá trị khác theo cách tương tự
+
+  sessionStorage.setItem('signupForm', JSON.stringify({ name, email }));
+}
+
+// Đính kèm sự kiện 'change' hoặc 'input' để lưu trạng thái form
+document.getElementById('Name').addEventListener('input', saveFormState);
+document.getElementById('Email').addEventListener('input', saveFormState);
+// Lắng nghe sự kiện cho các input khác tương tự
+</script>
+<script>
+window.onload = function() {
+  // Khôi phục trạng thái form từ sessionStorage
+  const savedData = JSON.parse(sessionStorage.getItem('signupForm'));
+  if (savedData) {
+    document.getElementById('Name').value = savedData.name || '';
+    document.getElementById('Email').value = savedData.email || '';
+    // Khôi phục giá trị khác theo cách tương tự
+  }
+}
+</script>
+

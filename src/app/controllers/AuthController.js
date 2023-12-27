@@ -5,8 +5,9 @@ const Company = require('../models/Company');
 const Job = require('../models/Job');
 const JobDetail = require('../models/JobDetail');
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const saltRounds = 10; // Điều chỉnh số lượng vòng băm theo nhu cầu bảo mật của bạn
 
 class AuthController {
     // [GET] /news
@@ -47,15 +48,15 @@ class AuthController {
         } */
 
         // So sánh mật khẩu nhập vào với mật khẩu đã băm trong database
-        /* const passwordMatch = await bcrypt.compare(Password, account.Password);
+        const passwordMatch = await bcrypt.compare(Password, account.Password);
 
         if (!passwordMatch) {
-            return res.status(401).send(Password +' Mật khẩu không chính xác. '+ account.Password);
-        } */
-
-        if(Password != account.Password) {
-            return res.status(401).send(' Mật khẩu không chính xác. ');
+           return res.status(401).send(' Mật khẩu không chính xác. ');
         }
+
+        /* if(Password != account.Password) {
+            return res.status(401).send(' Mật khẩu không chính xác. ');
+        } */
 
 
         // Kiểm tra vai trò của tài khoản và tạo token nếu cần
@@ -121,7 +122,113 @@ class AuthController {
         }
     };
     
+    async createNewAccount(role) {
+        try {
+          const newAccount = await Account.create({Role: role });
+          
+           // Sử dụng phương thức create
+          return newAccount;
+        } catch (error) {
+          throw error; // Ném lỗi để có thể xử lý ở cấp cao hơn
+        }
+      };
 
+    async setRole(req, res) {
+        /* try {
+          const { role } = req.body;
+          const newAccount = await AccountModel.create({ role }); // Giả định AccountModel đã có phương thức create
+          req.session.accountId = newAccount._id; // Lưu ID vào session
+          res.redirect('/signup_2'); // Chuyển hướng người dùng
+        } catch (error) {
+          res.status(500).send('Internal Server Error');
+        } */
+        try {
+            const { role } = req.body;
+            req.session.role = role;
+
+            /* const newAccount = await this.createNewAccount(role);
+            
+            req.session.accountId = newAccount._id; // Lưu ID vào session
+            const newUser = await User.create({accId: req.session.accountId });
+            req.session.userId = newUser._id;*/
+            res.redirect('/signup_2'); // Chuyển hướng người dùng
+            // Tiếp tục với logic của bạn 
+          } catch (error) {
+            console.error('Error creating new account:', error);
+            res.status(500).send('Internal Server Error');
+          }
+    };
+
+    async updateAccount(req, res) {
+        try {
+          /* const accountId = req.session.accountId; // Lấy ID từ session
+          const userId = req.session.userId; */
+          const Password= req.body.Password;
+          const hashedPassword = await bcrypt.hash(Password, saltRounds);
+          const CPassword= req.body.CPassword;
+          const check = req.body.check;
+
+          const checkEmail = await Account.findOne({Email: req.body.Email});
+
+          if(checkEmail) {
+            res.status(400).send('Email đã tồn tại');
+          }
+
+          if(Password === '') 
+          {
+            res.status(400).send('Mật khẩu không trùng khớp');
+          }
+          
+          if(Password != CPassword) 
+          {
+            res.status(400).send('Mật khẩu không trùng khớp');
+          }
+          console.log(check)
+          if(check == 'on') {
+            const role =  req.session.role;
+            const newAccount = await this.createNewAccount(role);
+              
+            req.session.accountId = newAccount._id; // Lưu ID vào session
+            const newUser = await User.create({accId: req.session.accountId });
+            req.session.userId = newUser._id;
+
+            const accountId = req.session.accountId; // Lấy ID từ session
+            const userId = req.session.userId;
+            
+
+            await Account.findByIdAndUpdate(accountId, { $set:
+              { Email: req.body.Email,
+            Password: hashedPassword } },{ new: true, useFindAndModify: false }).exec();
+
+            await User.findByIdAndUpdate(userId, { $set: { Name: req.body.Name} },{ new: true, useFindAndModify: false }).exec();
+            req.session.userName = req.body.Name;
+            const account = await Account.findById(accountId).exec();
+
+            if (account.Role === 'jobseeker') {
+
+            res.status(500).redirect('/jobseeker/profile?firstName=' + encodeURIComponent(req.session.userName)); // Chuyển hướng đến trang thành công hoặc tiếp theo
+            }else{
+            res.status(500).redirect('/employer/employer_details?firstName=' + encodeURIComponent(req.session.userName));
+            }
+            
+          }else{
+            res.status(400).send('Vui lòng xác nhận!');
+          }
+          
+
+          
+        } catch (error) {
+          console.error('Error updating account:', error);
+          // Không chuyển hướng, có thể hiển thị thông báo lỗi
+          res.render('signup_2', { error: 'Có lỗi xảy ra trong quá trình cập nhật tài khoản.' });
+
+        }
+      }
+
+    async renderSignupPage2(req, res) {
+        // Phương thức này có thể sử dụng để render trang signup_2
+        res.render('signup_2', { accountId: req.session.accountId });
+    };
     
 }
 
