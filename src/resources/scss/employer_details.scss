@@ -11,11 +11,10 @@ body{
     width: 80px;
     height: auto;
   }
-  .btn{
+.btn{
     display: flex;
     justify-content: center; 
     align-items: center; 
-    width: fit-content;
     background-color: $light-turtoise;
     border-radius: 100px;
     margin: 10px 0; 
@@ -40,8 +39,10 @@ body{
     }
 }
 .form-control{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border: 1px solid $muted-teal;
+    border-radius: 8px;
     .form-item{
         border: 1px solid $muted-teal;
     }
@@ -52,7 +53,7 @@ body{
 .lead{
     @include font-medium-normal;
 }
-label{
+.text{
     @include font-small-semi-bold;
 }
 .sub-label{
@@ -61,9 +62,8 @@ label{
 .img{
     border: 5px solid $light-turtoise;
     border-radius: 50%;
-    vertical-align: middle;
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
 }
 .large-box{
     height: 200px;
@@ -76,4 +76,40 @@ label{
     border-radius: 4px;
     resize: none;
 }
-
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box {
+    margin: 0 auto;
+    padding: 10px;
+    width: 300px;
+    border-style: dashed;
+    border-radius:20px ;
+    border-color: $light-turtoise;
+}
+.icon {
+    background: url('/src/public/img/Upload.svg');
+    height: 30px;
+    width: 30px;
+    display: block;
+    /* Other styles here */
+}
+label{
+    border: 1px solid $muted-teal;
+    border-radius: 12px;
+    padding: 6px 12px;
+    cursor: pointer;
+    &:hover{
+        background-color: $light-turtoise;
+    }
+    justify-content: center;
+    align-items: center;
+}
+input[type="file"] {
+    display: none;
+}
+.opacity{
+    opacity: 0.5;
+}

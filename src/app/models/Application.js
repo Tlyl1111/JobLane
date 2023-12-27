@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Application = new Schema({
-    KeyUser: String,
-    KeyJob: String,
     CV: String,
     CoverLetter: String,
     Status: String,
+    User: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    Job: { type: mongoose.Schema.Types.ObjectId, ref: 'Job'},
+    Company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},
   });
 
 module.exports = mongoose.model('Application', Application, 'applications');

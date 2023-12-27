@@ -13,13 +13,13 @@
     </div>
     <div class="container">
         <div class="row">
+
             <div class="col-4 text-center">
                 <div class="Avatar">
-                    <img src="/src/public/img/Avatar-largesize.jpg" class="img" alt="">
-                    <div class="profile-avatar">Edit your Avatar</div>
-                    <div>
-                        <input type="file" id="jobseeker-avatar" name="jobseeker-avatar" accept="image/png, image/jpeg">
-                    </div>
+                    <img src="/src/public/img/Avatar-largesize.jpg" class="img" alt=""> <br> <br>
+                    <label class="center" for="jobseeker-avatar">Select a new avatar</label>                  
+                    <input type="file" id="jobseeker-avatar" name="jobseeker-avatar" accept="image/png, image/jpeg">
+                
                 </div>
             </div>
             <div class="col-8">
@@ -33,7 +33,7 @@
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
+                <p class="text" for="lastName">Last name</p>
                 <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
@@ -41,7 +41,7 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="email">Email</label>
+              <p class="text" for="email">Email</p>
               <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
               <div class="invalid-feedback">
                 Please enter a valid email address.
@@ -49,7 +49,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="address">Address</label>
+              <p class="text" for="address">Address</p>
               <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
               <div class="invalid-feedback">
                 Please enter your address.
@@ -58,14 +58,14 @@
 
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="PhoneNumber">Phone number</label>
+                <p class="text" for="PhoneNumber">Phone number</p>
                 <input type="text" class="form-control" id="phone" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid phone number is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="Birthday">Date of birth</label>
+                <p class="text" for="Birthday">Date of birth</p>
                 <input type="date" class="form-control" id="Birthday" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid date of birth is required.
@@ -73,13 +73,12 @@
               </div>
             </div>
              <div class="mb-3">
-              <label for="Biography">Biography</label>
-              <input type="text" class="form-control" id="Biography" placeholder="Brief description about your self" required>
+              <p for="Biography">Biography</p>
+              <textarea type="text" class="form-control" id="Biography" rows="5" placeholder="Brief description about your self" required></textarea>
               <div class="invalid-feedback">
                 Please enter your address.
               </div>
             </div>
-            <hr class="mb-4">
         <div class="form-group w-30 m-auto">
             <button type="submit" class="btn btn-primary w-100">Save changes</button>
         </div>
