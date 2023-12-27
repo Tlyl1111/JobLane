@@ -4,7 +4,7 @@ const handlebars = require('express-handlebars').engine;
 var favicon = require('serve-favicon')
 const path = require('path');
 const session = require('express-session');
-
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3101;
 
@@ -40,6 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.engine(

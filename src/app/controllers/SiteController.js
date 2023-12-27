@@ -5,24 +5,27 @@ const Company = require('../models/Company');
 const Job = require('../models/Job');
 const JobDetail = require('../models/JobDetail');
 const User = require('../models/User');
-const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 class SiteController {
     // [GET] /
-    /* async index(req, res) {
+    async find(req, res) {
         
         try {
-            const role = 'employer1@gmail.com';
-            const account = await Account.findOne({Email: role});
-            res.json(account);
+            /* const role = 'jobseeker';
+            const account = await Account.find({Role: role}); */
+
+            const role = 'jobseeker4@gmail.com';
+
+            const checkEmail = await Account.findOne({Email: role});
+            res.json(checkEmail);
         } catch (err) {
             console.error(err); // Ghi log lỗi
             res.status(400).json({error: 'ERROR!!!'});
         }
         
         //res.render('home');
-    } */
+    }
     /* async home(req, res) {
         res.render('home');
     } */
@@ -32,7 +35,7 @@ class SiteController {
     }
 
     async signup(req, res) {
-        res.render('home');
+        res.render('signup_1');
     }
 
     //cần navigate trang nào thì đổi 'home' thành file đó nhé

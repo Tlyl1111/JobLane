@@ -16,13 +16,17 @@ class JobseekerController {
         
     }
     async profile(req, res) {
-        res.render('jobseeker/jobseeker_details');
+        const firstName = req.query.firstName;
+        res.render('jobseeker/jobseeker_details',{ firstName });
     }
     async applied_job_list(req, res) {
         res.render('jobseeker/applied_list');
     }
     async bookmarked_job_list(req, res) {
         res.render('jobseeker/favorite_job');
+    }
+    async job_posting_detail(req, res) {
+        res.render('job_posting_detail');
     }
 }
 

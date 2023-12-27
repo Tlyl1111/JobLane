@@ -13,14 +13,22 @@
         <p>Select your Account Type! </p>
     </div>
     
-    <ul class="w-50 mx-auto">
+    <form id="roleForm" action="/set-role" method="POST">
+        <ul class="w-50 mx-auto">
+        <input type="hidden" name="role" id="roleInput">
         <li class="form-group mb-3">
-            <button type="submit" class="btn btn-primary w-100">Are you a Job Seeker? Let’s find your job!</button>
+            <button type="submit" onclick="setRole('jobseeker')" class="btn btn-primary w-100">Are you a Job Seeker? Let’s find your job!</button>
         </li>
         <li class="form-group">
-            <button type="submit" class="btn btn-primary w-100">Are you an Employer? Let’s find your employee!</button>
+            <button type="submit" onclick="setRole('employer')" class="btn btn-primary w-100">Are you an Employer? Let’s find your employee!</button>
         </li>
 
-    </ul>
+    </ul></form>
         
 </body>
+<script>
+function setRole(role) {
+  document.getElementById('roleInput').value = role;
+  document.getElementById('roleForm').submit();
+}
+</script>

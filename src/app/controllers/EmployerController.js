@@ -21,7 +21,8 @@ class EmployerController {
         res.render('employer/post_list');
     }
     async profile(req, res) {
-        res.render('employer/employer_details');
+        const firstName = req.query.firstName;
+        res.render('employer/employer_details',{ firstName });
     }
     async applicants(req, res) {
         res.render('employer/applicant_list');
