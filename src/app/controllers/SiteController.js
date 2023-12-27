@@ -51,7 +51,7 @@ class SiteController {
     async calculateJobs(req, res) {
         try {
           
-          const jobs = await Job.find({}).exec(); // Đợi cho đến khi lấy được tất cả công việc
+          const jobs = await Job.find({}); // Đợi cho đến khi lấy được tất cả công việc
           
           const jobsWithTimeRemaining = await Promise.all(jobs.map(async (job) => {
             const daysRemaining = await this.calculateTimeRemaining(job.EndDay);
