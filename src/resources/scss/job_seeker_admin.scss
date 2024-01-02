@@ -39,7 +39,9 @@
   transform: translateY(-50%);
   height: 20px; /* Adjust as needed */
 }
-
+h4{
+  @include font-h3-extra-bold;
+}
 .search-input {
   width: 100%;
   border: none;
