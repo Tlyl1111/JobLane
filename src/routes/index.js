@@ -19,8 +19,9 @@ function route(app) {
     app.use('/admin', adminRouter);
     app.use('/employer', employerRouter);
     app.use('/jobseeker', jobseekerRouter);
+    app.use('/job', job);
     app.use('/', siteRouter);
-    app.use('/', job);
+    
     
 }
 
