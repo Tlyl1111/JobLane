@@ -207,7 +207,6 @@ hr {
     margin-right: 4px;
   }
   .list{
-    width: 870px;
     padding: 20px;
     background-color: $light-turtoise;
     border: none;
@@ -234,37 +233,125 @@ hr {
   .list a:hover{
     background-color: #f3f3f3;
   }
-  .list h6{
-    @include font-h6-extra-bold; 
+  .applicant-item h6{
+    @include font-h4-extra-bold;
   }
-  .list p{
+  .applicant-item p{
+    @include font-large-medium;
+  }
+  h4{
+    @include font-h4-extra-bold; 
+  }
+  p{
     @include font-medium-normal;
   }
   .list h5{
     @include font-h5-extra-bold
   }
-  
-  .status-tag {
-    padding: 10px;
-    text-align: center;
-    width: 154px;
-    height: 46px;
-    border-radius: 10px;
-    margin-right: 20px;
 
-}
-
-.status-tag img {
-    width: 20px; /* Adjust as needed */
-    height: 20px; /* Adjust as needed */
-    margin-right: 5px;
-}
-.status-yes {
-    background-color: $light-turtoise; /* Fallback color */
-}
-
-.status-no {
-    background-color: #0077BE; /* Fallback color */
-}
 
   
+button {
+  width: 140px;
+  height: 48px;
+  padding: 2px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  @include font-large-medium;
+  color: $dark-teal;
+  transition: background-color 0.3s ease;
+  border-radius: 100px;
+  margin-right: 4px;
+}
+
+.view {
+  background-color: transparent; /* Blue */
+  color: $dark-teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $dark-teal;
+}
+
+.view:hover {
+  background-color: #f3f3f3; /* Darker teal for hover */
+}
+
+.view img {
+  margin-left: 5px;
+}
+
+.applicant {
+  background-color: $light-turtoise; /* Blue */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.applicant:hover {
+  background-color: #24aa83; /* Darker teal for hover */
+}
+
+.applicant img {
+  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+
+.slick-slide{
+  margin: 10px 10px;
+}
+.slick-arrow{
+  position: absolute;
+  width: 48px; 
+  height: 48px; 
+  border-radius: 50%; 
+  top: 100%;
+  transform: translateY(-50%);
+  z-index: 5;
+  padding: 10px 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+}
+.slick-prev{
+ 
+  left: 0;
+  border: solid 1px $dark-teal;
+}
+.slick-next{
+  right: 0;
+  background-color: $light-turtoise;
+  border: none;
+}
+.slick-dots {
+    position: absolute;
+    bottom: -40px;
+    list-style: none;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; 
+  }
+.slick-dots button {
+  font-size: 0;
+  
+  width: 12px;
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 100rem;
+  background-color: #eee;
+  border: none;
+  outline: none;
+}
+.slick-dots .slick-active button{
+    background-color: $light-turtoise;
+}

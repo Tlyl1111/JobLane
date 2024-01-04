@@ -46,4 +46,28 @@ $(document).ready(function(){
       prevArrow:"<button type='button' class='slick-prev pull-left'><img src='/src/public/img/prev-arr.svg' alt='Previous'></button>",
             nextArrow:"<button type='button' class='slick-next pull-right'><img src='/src/public/img/next-arr.svg' alt='Next'></i></button>"
     });
+    $('.post-job-slider').slick({
+      infinite: false,
+      dots:true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      rows: 4,  
+      slidesPerRow: 1,
+      prevArrow:"<button type='button' class='slick-prev pull-left'><img src='/src/public/img/prev-arr.svg' alt='Previous'></button>",
+            nextArrow:"<button type='button' class='slick-next pull-right'><img src='/src/public/img/next-arr.svg' alt='Next'></i></button>"
+    });
+    $('.applicant-slider').slick({
+      infinite: false,
+      dots:true,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      rows: 4,  
+      slidesPerRow: 1,
+      prevArrow:"<button type='button' class='slick-prev pull-left'><img src='/src/public/img/prev-arr.svg' alt='Previous'></button>",
+            nextArrow:"<button type='button' class='slick-next pull-right'><img src='/src/public/img/next-arr.svg' alt='Next'></i></button>"
+    });
   });
