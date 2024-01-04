@@ -8,56 +8,78 @@
     
 </head>
 <body> 
-    <div id="myModal" class="modal">
-    <div class="modal-content">
-        <div class="title">
-            <span class="color-1">Apply for</span>
-            <span class="color-2">Specialist Digital Marketing/Content Marketing</span>
-        </div>
-        <hr>
-        <form class="infor"> 
-            <div class="form-row">
-                <div class="col mb-3">
-                    <label class="apply-label" for="FullName">Full Name</label>
-                    <input type="text" class="form-control" name="FullName" id="FullName">
+    <form id="apply_form" action="/jobseeker/loading_cv" method="post" enctype="multipart/form-data">
+        <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="title">
+                <span class="color-1">Apply for</span>
+                <span class="color-2">Specialist Digital Marketing/Content Marketing</span>
+            </div>
+            <hr>
+            <form class="infor"> 
+                <div class="form-row">
+                    <div class="col mb-3">
+                        <label class="apply-label" for="FullName">Full Name</label>
+                        <input type="text" class="form-control" name="FullName" id="FullName">
+                    </div>
                 </div>
-            </div>
-            <div class="form-row ">    
-                <div class="col form-group">
-                    <label class="apply-label" for="Email">Email</label>
-                    <input type="email" class="form-control" name="Email" id="Email">
+                <div class="form-row ">    
+                    <div class="col form-group">
+                        <label class="apply-label" for="Email">Email</label>
+                        <input type="email" class="form-control" name="Email" id="Email">
+                    </div>
+                    <div class="col form-group">
+                    <label class="apply-label" for="PhoneNumber">Phone Number</label>
+                        <input type="tel" class="form-control" name="PhoneNumber" id="PhoneNumber">
+                    </div>
                 </div>
-                <div class="col form-group">
-                   <label class="apply-label" for="PhoneNumber">Phone Number</label>
-                    <input type="tel" class="form-control" name="PhoneNumber" id="PhoneNumber">
+            </form>
+            <div class="cv row">
+                <div class="col-8 describe">
+                    Upload CV from Computer <br>
+                    File types: pdf. Maximum size: 5MB.
                 </div>
+                <button class="col-2 btn btn-primary align-self-center">
+                    Upload CV
+                    <img src="/src/public/img/Upload.svg" alt="">
+                </button>
+                <input type="file" id="file" name="file"/>
             </div>
-        </form>
-        <div class="cv row">
-            <div class="col-8 describe">
-                Upload CV from Computer <br>
-                File types: pdf. Maximum size: 5MB.
+            <div class="save-cv d-flex">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label sub-label" for="exampleCheck1">Save CV (Used for management in the CV Portfolio and helps Employers reach out to you)</label>
+                </div>
+                
             </div>
-            <button class="col-2 btn btn-primary align-self-center">
-                Upload CV
-                <img src="/src/public/img/Upload.svg" alt="">
-            </button>
-        </div>
-        <div class="save-cv d-flex">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label sub-label" for="exampleCheck1">Save CV (Used for management in the CV Portfolio and helps Employers reach out to you)</label>
+            <div class="cover-letter">
+                <label class="cover-label" for="cover-letter">Cover Letter</label>
+                <textarea class="form-control" id="cv-lt" name="cv_lt" rows="8" placeholder="Write a brief introduction about yourself (strengths, weaknesses) if desired, the reason for working at this company. This is a way to impress the recruiter if you do not have work experience (or a poor CV)."></textarea>
             </div>
-            
+            <div class="action d-inline-flex justify-content-start mt-5">
+                <input type="reset" value="Cancel" class="btn btn-secondary"></input>
+                <input type="submit" value="Apply CV" class="btn btn-primary ml-5"></input>
+            </div>
         </div>
-        <div class="cover-letter">
-            <label class="cover-label" for="cover-letter">Cover Letter</label>
-            <textarea class="form-control" id="cv-lt" rows="8" placeholder="Write a brief introduction about yourself (strengths, weaknesses) if desired, the reason for working at this company. This is a way to impress the recruiter if you do not have work experience (or a poor CV)."></textarea>
         </div>
-        <div class="action d-inline-flex justify-content-start mt-5">
-            <button class="btn btn-secondary">Cancel</button>
-            <button class="btn btn-primary ml-5">Apply CV</button>
-        </div>
-    </div>
-    </div>
+    </form>
 </body>
+<script>
+    document.getElementById('apply_form').addEventListener('submit', function(event) {
+    var fileInput = document.getElementById('file');
+    
+    // Kiểm tra xem có file nào được chọn hay không
+    if (!fileInput.value) {
+        alert('Vui lòng chọn một file trước khi submit!');
+        event.preventDefault(); // Ngăn chặn form được submit nếu không có file
+    }
+
+    var textInput = document.getElementById('cv-lt');
+
+    // Kiểm tra xem trường văn bản đã được nhập hay chưa
+    if (textInput.value.trim() === '') {
+        alert('Vui lòng nhập văn bản vào trường!');
+        event.preventDefault(); // Ngăn chặn form được submit nếu trường văn bản trống
+    }
+});
+</script>

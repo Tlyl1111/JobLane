@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hình Ảnh Đã Tải Lên</title>
+</head>
+<body>
+    <h1>Hình Ảnh Đã Tải Lên</h1>
+    {{#each images}}
+        <div>
+            <h2>{{this.name}}</h2>
+            <img src="data:{{this.contentType}};base64,{{this.data}}" alt="{{this.name}}" />
+        </div>
+    {{/each}}
+</body>
+</html>

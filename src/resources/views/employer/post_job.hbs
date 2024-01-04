@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <form action="" method="post" class="container">
     <div class="text-center mt-5">
       <div class="title">Hi, Tom Cruise</div>
       <p class="sub-title">Empower Your Recruitment: Post Jobs and Find Talent Here!</p>
@@ -28,17 +28,19 @@
           <p class="text" for="Categories">Category</p>
           <div class="row">
             <div class="col-md-4 mb-3">
-              <input type="text" class="form-control" id="Category1" placeholder="" value="" required>
+              <select type="text" class="form-control" name="Category1" id="Category1" placeholder="" value="" required>
+              <option value="option1">Lựa chọn 1</option>
+              <option value="option2">Lựa chọn 2</option>
+              <option value="option3">Lựa chọn 3</option>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <input type="text" class="form-control" name="Category2" id="Category2" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
             <div class="col-md-4 mb-3">
-              <input type="text" class="form-control" id="Category2" placeholder="" value="" required>
-              <div class="invalid-feedback">
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <input type="text" class="form-control" id="Category3" placeholder="" value="" required>
+              <input type="text" class="form-control" name="Category3" id="Category3" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
@@ -50,19 +52,19 @@
 
             <div class="col-md-4 mb-3">
               <p class="text" for="Location">Location</p>
-              <input type="text" class="form-control" id="Location" placeholder="" value="" required>
+              <input type="text" class="form-control" name="Location" id="Location" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <p class="text" for="JobType">Job Type</p>
-              <input type="text" class="form-control" id="JobType" placeholder="" value="" required>
+              <input type="text" class="form-control" name="JobType" id="JobType" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <p class="text" for="CompanyType">Company Type</p>
-              <input type="text" class="form-control" id="CompanyType" placeholder="" value="" required>
+              <input type="text" class="form-control" name="CompanyType" id="CompanyType" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
@@ -73,19 +75,19 @@
           <div class="row">
             <div class="col-md-4 mb-3">
               <p class="text" for="Specialization">Specialization</p>
-              <input type="text" class="form-control" id="Specialization" placeholder="" value="" required>
+              <input type="text" class="form-control" name="Specialization" id="Specialization" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <p class="text" for="Experience">Experience</p>
-              <input type="text" class="form-control" id="Experience" placeholder="" value="" required>
+              <input type="text" class="form-control" name="Experience" id="Experience" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <p class="text" for="Salary">Salary</p>
-              <input type="text" class="form-control" id="Salary" placeholder="" value="" required>
+              <input type="text" class="form-control" name="Salary" id="Salary" placeholder="" value="" required>
               <div class="invalid-feedback">
               </div>
             </div>
@@ -95,14 +97,14 @@
         <div class="row date">
           <div class="col">
             <p class="text" for="StartDate">Start of post date</p>
-            <input type="date" class="form-control" id="StartDate" placeholder="" value="" required>
+            <input type="date" class="form-control" name="StartDate" id="StartDate" placeholder="" value="" required>
             <div class="invalid-feedback">
               Valid end date is required.
             </div>
           </div>
           <div class="col">
             <p class="text" for="EndDate">End of post date</p>
-            <input type="date" class="form-control" id="EndDate" placeholder="" value="" required>
+            <input type="date" class="form-control" name="EndDate" id="EndDate" placeholder="" value="" required>
             <div class="invalid-feedback">
               Valid end date is required.
             </div>
@@ -124,28 +126,28 @@
           </div>
           <div class="jobbenefit">
             <p class="text" for="Description">Job Benefits/</p>
-            <textarea type="text" class="form-control" id="Description" rows="5" placeholder="" required></textarea>
+            <textarea type="text" class="form-control" name="Description" id="Description" rows="5" placeholder="" required></textarea>
             <div class="invalid-feedback">
               Please enter your Company Description.
             </div>
           </div>
           <div class="jobrequire">
             <p class="text" for="Goal">Job Requirement</p>
-            <textarea type="text" class="form-control" id="Goal" rows="5" placeholder="" required></textarea>
+            <textarea type="text" class="form-control" name="Goal" id="Goal" rows="5" placeholder="" required></textarea>
             <div class="invalid-feedback">
               Please enter your Company Goal.
             </div>
           </div>
           <div class="hiringprocess">
             <p class="text" for="CompanyAdress">Hiring Process</p>
-            <textarea type="text" class="form-control" id="CompanyAddress" rows="5" placeholder="" required></textarea>
+            <textarea type="text" class="form-control" name="CompanyAddress" id="CompanyAddress" rows="5" placeholder="" required></textarea>
             <div class="invalid-feedback">
               Please enter your Company Adress.
             </div>
           </div>
           <div class="howtoapply">
             <p class="text" for="CompanyEmail">How to apply</p>
-            <textarea type="text" class="form-control" id="CompanyEmail" rows="5" placeholder="" required></textarea>
+            <textarea type="text" class="form-control" name="CompanyEmail" id="CompanyEmail" rows="5" placeholder="" required></textarea>
             <div class="invalid-feedback">
               Please enter your Company Email.
             </div>
@@ -156,5 +158,5 @@
     <div class="form-group w-30 m-auto">
       <button type="submit" class="btn btn-primary w-100">Post Job</button>
     </div>
-  </div>
+  </form>
 </body>

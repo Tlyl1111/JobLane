@@ -17,7 +17,10 @@ const JobDetail = new Schema({
     HiringProcess: String,
     HowtoApply: String,
     JobID: { type: mongoose.Schema.Types.ObjectId, ref: 'Job'},
-    CompanyID: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},  
+    CompanyID: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},
+    Category1ID: { type: mongoose.Schema.Types.ObjectId, ref: 'Category'},  
+    Category2ID: { type: mongoose.Schema.Types.ObjectId, ref: 'Category'},
+    Category3ID: { type: mongoose.Schema.Types.ObjectId, ref: 'Category'}, 
   });
 
 module.exports = mongoose.model('JobDetail', JobDetail, 'jobdetails');

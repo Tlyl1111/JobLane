@@ -13,6 +13,7 @@ const Job = new Schema({
     //Status = rejected: không được duyệt
     CompanyID: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},
     JobDetailID: { type: mongoose.Schema.Types.ObjectId, ref: 'JobDetail'},
+    ImagPosstingID: { type: mongoose.Schema.Types.ObjectId, ref: 'ImgPosting'},
   });
 
 module.exports = mongoose.model('Job', Job, 'jobs');

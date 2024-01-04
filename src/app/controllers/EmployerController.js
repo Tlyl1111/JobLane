@@ -27,6 +27,10 @@ class EmployerController {
     async applicants(req, res) {
         res.render('employer/applicant_list');
     }
+
+    async loading_profile(req, res) {
+        console.log(req.body);
+    }
 }
 
 module.exports = new EmployerController();

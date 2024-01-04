@@ -205,9 +205,10 @@ class AuthController {
             const account = await Account.findById(accountId).exec();
 
             if (account.Role === 'jobseeker') {
-
+            req.session.userId = userId;
             res.status(500).redirect('/jobseeker/profile?firstName=' + encodeURIComponent(req.session.userName)); // Chuyển hướng đến trang thành công hoặc tiếp theo
             }else{
+              req.session.userId = userId;
             res.status(500).redirect('/employer/employer_details?firstName=' + encodeURIComponent(req.session.userName));
             }
             

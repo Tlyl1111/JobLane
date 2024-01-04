@@ -123,3 +123,31 @@ input[type="file"] {
 .opacity{
     opacity: 0.5;
 }
+.search-divider {
+    border-left: 3px solid $dark-teal; 
+    height: 30px; 
+    align-self: center; 
+}
+
+.search-input, .search-select {
+    background-color: transparent; 
+    border: none; 
+    box-shadow: none; 
+}
+
+.search-input:focus, .search-select:focus {
+    background-color: transparent; 
+    border: none;
+    box-shadow: none;
+    outline: none; 
+}
+
+
+.search-input:first-child, .search-select:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.input-group > .form-control, .input-group > .custom-select, .input-group > .input-group-append > .btn {
+    border: none;
+}

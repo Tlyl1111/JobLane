@@ -7,6 +7,7 @@ const Application = new Schema({
     Status: String,
     User: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
     Job: { type: mongoose.Schema.Types.ObjectId, ref: 'Job'},
+    CVId: { type: mongoose.Schema.Types.ObjectId, ref: 'CV' },
     Company: { type: mongoose.Schema.Types.ObjectId, ref: 'Company'},
   });
 

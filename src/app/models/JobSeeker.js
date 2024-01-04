@@ -7,7 +7,8 @@ const JobSeeker = new Schema({
     Address: String,
     Bio: String,
     CV: String,
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    CVId: { type: mongoose.Schema.Types.ObjectId, ref: 'CV' },
   });
 
 module.exports = mongoose.model('JobSeeker', JobSeeker, 'jobseekers');
