@@ -12,7 +12,8 @@
         <p class="sub-title">Your Profile</p>
     </div>
     <br><br>
-    <div class="container">
+    <form id="profile" action="/employer/loading_profile" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+      <div class="container">
       <div class="row">
             <div class="col-6">
               <div class="row">
@@ -25,18 +26,18 @@
                 </div>
             </div>
           
-            <form class="needs-validation" novalidate></form>
+            
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="{{firstName}}" required>
+                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="{{firstName}}" required>
                 <div class="invalid-feedback">
                   Valid first name is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <p class="text" for="lastName">Last name</p>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="text" class="form-control" name="lastName"  id="lastName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Valid last name is required.
                 </div>
@@ -44,14 +45,14 @@
             </div>    
             <div class="mb-3">
               <p class="text" for="email">Email</p>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" value="" required>
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div>
             </div>
             <div class="mb-3">
               <p class="text" for="phone">Phone</p>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com" value="" required>
+              <input type="email" class="form-control" name="phone" id="phone" placeholder="you@example.com" value="" required>
               <div class="invalid-feedback">
                 Please enter a valid phone number.
               </div>
@@ -64,7 +65,7 @@
             <form class="needs-validation" novalidate>
             <div class="mb-3">
               <p class="text" for="address">Company Name</p>
-              <input type="text" class="form-control" id="Companyname" placeholder="" required>
+              <input type="text" class="form-control" name="Companyname" id="Companyname" placeholder="" required>
               <div class="invalid-feedback">
                 Please enter your company name.
               </div>
@@ -74,28 +75,28 @@
             </div>
             <div class="mb-3">
               <p class="text" for="Description">Company Description</p>
-              <textarea type="text" class="form-control" id="Description" rows="3" placeholder="" required></textarea>
+              <textarea type="text" class="form-control" name="Description" id="Description" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
                 Please enter your Company Description.
               </div>
             </div>
             <div class="mb-3">
               <p class="text" for="Goal">Company Goal</p>
-              <textarea type="text" class="form-control" id="Goal" rows="3" placeholder="" required></textarea>
+              <textarea type="text" class="form-control" name="Goal" id="Goal" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
                 Please enter your Company Goal.
               </div>
             </div>
             <div class="mb-3">
               <p class="text" for="CompanyAdress">Company Adress</p>
-              <textarea type="text" class="form-control" id="CompanyAddress" rows="3" placeholder="" required></textarea>
+              <textarea type="text" class="form-control" name="CompanyAddress" id="CompanyAddress" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
                 Please enter your Company Adress.
               </div>
             </div>
             <div class="mb-3">
               <p class="text" for="CompanyEmail">Company Email</p>
-              <textarea type="text" class="form-control" id="CompanyEmail" rows="3" placeholder="" required></textarea>
+              <textarea type="text" class="form-control" name="CompanyEmail" id="CompanyEmail" rows="3" placeholder="" required></textarea>
               <div class="invalid-feedback">
                 Please enter your Company Email.
               </div>
@@ -116,5 +117,7 @@
         <button type="submit" class="btn btn-primary w-100">Save changes</button>
       </div>
       </div>
+    </form>
+    
   
 </body>

@@ -13,6 +13,10 @@ class JobController {
     
     async dashboard(req, res) {
         res.render('job_posting_details');
+    };
+
+    async posting(req,res) {
+        
     }
     
 }
