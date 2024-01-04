@@ -6,14 +6,16 @@ const Job = require('../models/Job');
 const JobDetail = require('../models/JobDetail');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const saltRounds = 10; // Điều chỉnh số lượng vòng băm theo nhu cầu bảo mật của bạn
 
 class SiteController {
     // [GET] /
     async find(req, res) {
         
-        try {
-            /* const role = 'jobseeker';
-            const account = await Account.find({Role: role}); */
+       /*  try {
+            const role = 'jobseeker';
+            const account = await Account.find({Role: role});
 
             const role = 'jobseeker4@gmail.com';
 
@@ -22,9 +24,23 @@ class SiteController {
         } catch (err) {
             console.error(err); // Ghi log lỗi
             res.status(400).json({error: 'ERROR!!!'});
-        }
+        } */
         
         //res.render('home');
+        try {
+          const Password = 'admin1';
+          const Role = 'admin';
+          const Email = 'admin1@gmail.com';
+          const hashedPassword = await bcrypt.hash(Password, saltRounds);
+          await Account.create({
+            Role: Role,
+            Password: hashedPassword,
+            Email: Email,
+          });
+          
+        } catch (error) {
+          res.status(400).json({error: 'ERROR!!!'});
+        }
     }
     /* async home(req, res) {
         res.render('home');

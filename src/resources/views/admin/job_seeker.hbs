@@ -36,7 +36,7 @@
                 <td>26/03/2023</td>
                 <td class="d-flex">
                     <button class="contact">Send Email</button>
-                    <button class="view">
+                    <button class="view" id="view">
                         View
                         <img src="/src/public/img/Chevron Right.svg" alt="">
                     </button>
@@ -129,9 +129,14 @@
 
         // Initialize the table display
         updateTableDisplay();
+
+        
     });
    
-       
+    document.getElementById('view').addEventListener('click', function() {
+        // Chuyển hướng người dùng đến trang bạn muốn
+        window.location.href = '/admin/jobseeker_details';
+    });   
 </script>
 
 </body>

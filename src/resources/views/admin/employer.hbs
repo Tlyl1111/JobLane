@@ -36,7 +36,7 @@
                 <td>26/03/2023</td>
                 <td class="d-flex">
                     <button class="contact">Send Email</button>
-                    <button class="view">
+                    <button class="view" id="view">
                         View
                         <img src="/src/public/img/Chevron Right.svg" alt="">
                     </button>
@@ -70,67 +70,71 @@
     
         
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const defaultRowsPerPage = 10; // Set your default value here
-        let currentPage = 1;
-        let rowsPerPage = defaultRowsPerPage;
-        const rowsSelect = document.getElementById('rows');
-        const paginationInfo = document.querySelector('.pagination-info');
-        const prevButton = document.querySelector('.pagination-controls button:first-child');
-        const nextButton = document.querySelector('.pagination-controls button:last-child');
-        const table = document.querySelector('table'); // Assuming there is only one table
+        document.addEventListener('DOMContentLoaded', function () {
+            const defaultRowsPerPage = 10; // Set your default value here
+            let currentPage = 1;
+            let rowsPerPage = defaultRowsPerPage;
+            const rowsSelect = document.getElementById('rows');
+            const paginationInfo = document.querySelector('.pagination-info');
+            const prevButton = document.querySelector('.pagination-controls button:first-child');
+            const nextButton = document.querySelector('.pagination-controls button:last-child');
+            const table = document.querySelector('table'); // Assuming there is only one table
 
-        function updateTableDisplay() {
-            const rows = table.querySelectorAll('tr:not(:first-child)');
-            const totalPages = Math.ceil(rows.length / rowsPerPage);
-            
-            // Hide all rows
-            rows.forEach(row => {
-                row.style.display = 'none';
+            function updateTableDisplay() {
+                const rows = table.querySelectorAll('tr:not(:first-child)');
+                const totalPages = Math.ceil(rows.length / rowsPerPage);
+                
+                // Hide all rows
+                rows.forEach(row => {
+                    row.style.display = 'none';
+                });
+
+                // Calculate the range of rows to display
+                const start = (currentPage - 1) * rowsPerPage;
+                const end = start + rowsPerPage;
+                
+                // Show the rows for the current page
+                rows.forEach((row, index) => {
+                    if (index >= start && index < end) {
+                        row.style.display = '';
+                    }
+                });
+
+                paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            }
+
+            function goToPage(pageNumber) {
+                currentPage = pageNumber;
+                updateTableDisplay();
+            }
+
+            rowsSelect.addEventListener('change', function(event) {
+                rowsPerPage = parseInt(event.target.value, 10);
+                goToPage(1); // Reset to the first page and update table display
             });
 
-            // Calculate the range of rows to display
-            const start = (currentPage - 1) * rowsPerPage;
-            const end = start + rowsPerPage;
-            
-            // Show the rows for the current page
-            rows.forEach((row, index) => {
-                if (index >= start && index < end) {
-                    row.style.display = '';
+            prevButton.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    goToPage(currentPage - 1);
                 }
             });
 
-            paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
-        }
+            nextButton.addEventListener('click', function() {
+                const rows = table.querySelectorAll('tr:not(:first-child)');
+                const totalPages = Math.ceil(rows.length / rowsPerPage);
+                if (currentPage < totalPages) {
+                    goToPage(currentPage + 1);
+                }
+            });
 
-        function goToPage(pageNumber) {
-            currentPage = pageNumber;
+            // Initialize the table display
             updateTableDisplay();
-        }
-
-        rowsSelect.addEventListener('change', function(event) {
-            rowsPerPage = parseInt(event.target.value, 10);
-            goToPage(1); // Reset to the first page and update table display
         });
-
-        prevButton.addEventListener('click', function() {
-            if (currentPage > 1) {
-                goToPage(currentPage - 1);
-            }
+        
+        document.getElementById('view').addEventListener('click', function() {
+        // Chuyển hướng người dùng đến trang bạn muốn
+        window.location.href = '/admin/employer_details';
         });
-
-        nextButton.addEventListener('click', function() {
-            const rows = table.querySelectorAll('tr:not(:first-child)');
-            const totalPages = Math.ceil(rows.length / rowsPerPage);
-            if (currentPage < totalPages) {
-                goToPage(currentPage + 1);
-            }
-        });
-
-        // Initialize the table display
-        updateTableDisplay();
-    });
-   
        
 </script>
 

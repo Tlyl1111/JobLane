@@ -34,8 +34,8 @@ class AuthController {
             req.session.user = {
             ...account.toObject(),
             isJobseeker: account.Role === 'jobseeker',
-            isEmployer: account.Role === 'employer'
-            
+            isEmployer: account.Role === 'employer',
+            isAdmin: account.Role === 'admin',
           };
 
               // Loại bỏ mật khẩu khỏi session
