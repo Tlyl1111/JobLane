@@ -20,7 +20,7 @@
                     <a class="nav-link" href="/jobseeker/dashboard">Home<span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Jobs</a>
+                    <a class="nav-link" href="/job/alljob">Jobs</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/jobseeker/applied_list">Applied Jobs</a>
@@ -30,11 +30,11 @@
                   </li>
               </ul>
               <ul class="navbar-nav">
-                <li class="nav-item d-inline-flex">
+                {{!-- <li class="nav-item d-inline-flex">
                     <button href="/signin">Login</button> 
                     <a class="divider"></a>
                     <button href="/signup">Register</button>
-                </li>
+                </li> --}}
                 <li class="nav-item d-inline-block d-sm-flex align-items-center">
                   <a class="notification-icon ml-5" href="#">
                     <img src="/img/bell-ring.png" alt="bell icon">
@@ -73,18 +73,18 @@
                     <a class="nav-link" href="/employer/post_job">Jobs Posting</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/employer">Applicants</a>
+                    <a class="nav-link" href="/employer/post_list">Manage Posts</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">About us</a>
                   </li>
               </ul>
               <ul class="navbar-nav">
-                <li class="nav-item d-inline-flex">
+                {{!-- <li class="nav-item d-inline-flex">
                     <button href="/signin">Login</button> 
                     <a class="divider"></a>
                     <button href="/signup">Register</button>
-                </li>
+                </li> --}}
                 <li class="nav-item d-inline-block d-sm-flex align-items-center">
                   <a class="notification-icon ml-5" href="#">
                     <img src="/img/bell-ring.png" alt="bell icon">
@@ -175,5 +175,6 @@
             </div>
             
       </nav>
+      
     </body>
 {{/if}}
