@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="action d-flex my-2">
-            <button class="back mr-auto">
+            <button id="back" class="back mr-auto">
                 <img src="/src/public/img/Chevron Left.svg" alt="">
                 Back
             </button>
@@ -108,3 +108,12 @@
 
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Lấy phần tử bằng id và gán sự kiện click vào nó
+    document.getElementById('back').addEventListener('click', function() {
+      // Sử dụng window.history.back() để quay lại trang trước
+      window.history.back();
+    });
+  });
+</script>

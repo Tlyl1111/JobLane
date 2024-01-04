@@ -43,7 +43,7 @@
                         <td class="d-flex">
                             <button class="approve">Approve</button>
                             <button class="reject">Reject</button>
-                            <button class="view">
+                            <button class="view" id="view">
                                 View
                                 <img src="/src/public/img/Chevron Right.svg" alt="">
                             </button>
@@ -327,6 +327,10 @@
                 const firstTable = allContent[0].querySelector('table');
                 resetRowsPerPage(firstTable); // Use reset function to initialize the table
             }
+        });
+        document.getElementById('view').addEventListener('click', function() {
+        // Chuyển hướng người dùng đến trang bạn muốn
+        window.location.href = '/admin/job_post_detail';
         });
 
     </script>
