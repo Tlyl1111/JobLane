@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <form action="" method="post" class="container">
+  <form id="postform" action="/employer/posting" method="post" enctype="multipart/form-data" class="container">
     <div class="text-center mt-5">
       <div class="title">Hi, Tom Cruise</div>
       <p class="sub-title">Empower Your Recruitment: Post Jobs and Find Talent Here!</p>
@@ -16,10 +16,9 @@
     <br><br>
     <div class="row">
       <div class="col">
-        <form class="needs-validation" novalidate></form>
         <div class="jobtitle">
           <p class="text" for="JobTitle">Job Title</p>
-          <input type="text" class="form-control" id="JobTitle" placeholder="" required>
+          <input type="text" class="form-control" name="JobTitle" id="JobTitle" placeholder="" required>
           <div class="invalid-feedback">
             Please enter the Job title.
           </div>
@@ -110,18 +109,23 @@
             </div>
           </div>
         </div>
-        <div class="jobimage">
+        
+        <div >
+          
           <p class="text">Image</p>
           <div class="box center">
             <p class="text-center">Select or Drag and Drop here</p>
             <p class="text-center opacity"> <span style="color:gray">PNG, SVG file size no more than 10MB</span></p>
             <label class="center text-center" for="PostImage">Select file</label>
-            <input type="file" id="PostImage" name="Company-logo" accept="image/png, image/jpeg" class="lg-center">
+            <input type="file" id="PostImage" name="PostImage" accept="image/png, image/jpeg" class="lg-center">
+            
           </div> <br>
+        </div>
+        <div>
+          
         </div>
       </div>
       <div class="col">
-        <form class="needs-validation" novalidate>
           <div class="row">
           </div>
           <div class="jobbenefit">
@@ -139,15 +143,15 @@
             </div>
           </div>
           <div class="hiringprocess">
-            <p class="text" for="CompanyAdress">Hiring Process</p>
-            <textarea type="text" class="form-control" name="CompanyAddress" id="CompanyAddress" rows="5" placeholder="" required></textarea>
+            <p class="text" for="HiringProcess">Hiring Process</p>
+            <textarea type="text" class="form-control" name="HiringProcess" id="HiringProcess" rows="5" placeholder="" required></textarea>
             <div class="invalid-feedback">
               Please enter your Company Adress.
             </div>
           </div>
           <div class="howtoapply">
-            <p class="text" for="CompanyEmail">How to apply</p>
-            <textarea type="text" class="form-control" name="CompanyEmail" id="CompanyEmail" rows="5" placeholder="" required></textarea>
+            <p class="text" for="Howtoapply">How to apply</p>
+            <textarea type="text" class="form-control" name="Howtoapply" id="Howtoapply" rows="5" placeholder="" required></textarea>
             <div class="invalid-feedback">
               Please enter your Company Email.
             </div>
@@ -156,7 +160,19 @@
     </div>
     <br> <br>
     <div class="form-group w-30 m-auto">
-      <button type="submit" class="btn btn-primary w-100">Post Job</button>
+      <input type="submit" value="Post Job" class="btn btn-primary w-100"></input>
     </div>
   </form>
 </body>
+<script>
+    document.getElementById('postform').addEventListener('submit', function(event) {
+    var fileInput = document.getElementById('PostImage');
+    
+    // Kiểm tra xem có file nào được chọn hay không
+    if (!fileInput.value) {
+        alert('Vui lòng chọn một file trước khi submit!');
+        event.preventDefault(); // Ngăn chặn form được submit nếu không có file
+    }
+
+});
+</script>

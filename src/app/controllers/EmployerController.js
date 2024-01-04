@@ -7,6 +7,12 @@ const JobDetail = require('../models/JobDetail');
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const ImgPosting = require('../models/ImgPosting');
+
+const multer = require('multer');
+// Sử dụng memoryStorage để tệp được lưu trong bộ nhớ tạm thời
+const upload = multer({ storage: multer.memoryStorage() });
+//newsController.index
 
 class EmployerController {
     
@@ -31,6 +37,46 @@ class EmployerController {
     async loading_profile(req, res) {
         console.log(req.body);
     }
+
+    async posting(req,res) {
+        try {
+
+            const newFile = new ImgPosting({
+                name: req.file.originalname,
+                data: req.file.buffer,
+                contentType: req.file.mimetype
+              });
+
+              
+            await newFile.save();
+
+            const newjobdetail = await JobDetail.create({
+                Type: req.body.JobType,
+                Specialization: req.body.Specialization,
+                CompanyType: req.body.CompanyType,
+                Location: req.body.Location,
+                Experience: req.body.Experience,
+                Salary: req.body.Salary,
+                Description: req.body.Description,
+                Requirement: req.body.Goal,
+                HiringProcess: req.body.HiringProcess,
+                HowtoApply: req.body.Howtoapply,
+            });
+            
+            const newjob = await Job.create({
+                Title: req.body.JobTitle,
+                PostDay: req.body.StartDate,
+                EndDay: req.body.EndDate,
+                Status: 'assessing',
+                JobDetailID: newjobdetail._id,
+                ImagPosstingID: ImgPosting._id,
+            });
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+
+    }
+    
 }
 
 module.exports = new EmployerController();

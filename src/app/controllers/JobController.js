@@ -15,9 +15,6 @@ class JobController {
         res.render('job_posting_details');
     };
 
-    async posting(req,res) {
-        
-    }
     
 }
 
