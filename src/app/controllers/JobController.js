@@ -10,9 +10,12 @@ const jwt = require('jsonwebtoken');
 
 class JobController {
     
-    
-    async dashboard(req, res) {
-        res.render('job_posting_details');
+    async categories(req, res) {
+        res.render('categories');
+    }
+
+    async alljob(req, res) {
+        res.render('search_result');
     };
 
     

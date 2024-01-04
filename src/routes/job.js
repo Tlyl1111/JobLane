@@ -4,9 +4,8 @@ const router = express.Router();
 
 const JobController = require('../app/controllers/JobController');
 
-
-
-router.post('/job', JobController.dashboard);
+router.use('/alljob', JobController.alljob);
+router.use('/categories', JobController.categories);
 
 
 module.exports = router;
