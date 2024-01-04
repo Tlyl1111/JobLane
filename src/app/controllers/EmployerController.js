@@ -18,8 +18,9 @@ class EmployerController {
     
     
     async dashboard(req, res) {
-        res.render('employer/dashboard');
+        res.render('dashboard');
     }
+    
     async job_posting(req, res) {
         res.render('employer/post_job');
     }
