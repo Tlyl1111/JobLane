@@ -1,136 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/public/css/jobseeker_details.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/public/css/jobseeker_details.css">
 </head>
+
 <body>
-    <div class="text-center mt-5">  
-        <div class="title">Hi, Tom Cruise</div>
-        <p class="sub-title">Your Profile</p>
+      <div class="text-center mt-5">
+      <div class="title">Hi, Tom Cruise</div>
+      <p class="sub-title">Your Profile is Here!</p>
     </div>
-    <form id="profile" action="/jobseeker/your_profile" class="needs-validation" novalidate method="post" enctype="multipart/form-data">
-      <div class="container">
+    <br><br>
+  <form id="profile" action="/jobseeker/your_profile" method="post" enctype="multipart/form-data" class="container">
+
+    <div class="row">
+      <div class="col-4">
         <div class="row">
-
-            <div class="col-4 text-center">
-                <div class="Avatar">
-                    <img src="/src/public/img/Avatar-largesize.jpg" class="img" alt=""> <br> <br>
-                    <label class="center" for="jobseeker-avatar">Select a new avatar</label>                  
-                    <input type="file" id="jobseeker-avatar" name="jobseeker-avatar" accept="image/png, image/jpeg">
-                
-                </div>
-            </div>
-            
-              <div class="col-8">
-              
-            
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <p class="text" for="firstName">First name</p>
-                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="{{firstName}}" required>
-                <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <p class="text" for="lastName">Last name</p>
-                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid last name is required.
-                </div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <p class="text" for="email">Email</p>
-              <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" value="" required>
-              <div class="invalid-feedback">
-                Please enter a valid email address.
-              </div>
-            </div>
-
-            <div class="mb-3">
-              <p class="text" for="address">Address</p>
-              <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your address.
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <p class="text" for="PhoneNumber">Phone number</p>
-                <input type="text" class="form-control" name="phone" id="phone" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid phone number is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <p class="text" for="Birthday">Date of birth</p>
-                <input type="date" class="form-control" name="Birthday" id="Birthday" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid date of birth is required.
-                </div>
-              </div>
-            </div>
-             <div class="mb-3">
-              <p for="Biography">Biography</p>
-              <textarea type="text" class="form-control" name="Biography" id="Biography" rows="5" placeholder="Brief description about your self" required></textarea>
-              <div class="invalid-feedback">
-                Please enter your address.
-              </div>
-            </div>
-        <div class="form-group w-30 m-auto">
-            <button type="submit" class="btn btn-primary w-100">Save changes</button>
+          <div class="Avatar center">
+            <img src="/src/public/img/Avatar-largesize.jpg" class="img" alt="">
+            <p></p>
+            <label class="center" for="jobseeker-avatar">Select a new avatar</label>
+            <input type="file" id="jobseeker_avatar" name="jobseeker_avatar" accept="image/png, image/jpeg">
+            <br>
+          </div>
         </div>
-        
-            </div>
-            
+      </div>
+      <div class="col-8">
+        <p class="text" for="firstName">First name</p>
+        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" required>
+        <div class="invalid-feedback">
+          Please enter the Job title.
         </div>
-        <div>
+        <p class="text" for="email">Email</p>
+        <input type="text" class="form-control" name="email" id="email" placeholder="" required>
+        <div class="invalid-feedback">
+          Please enter the Job title.
         </div>
-      </div> 
-    </form>
-    
+        <p class="text" for="address">Address</p>
+        <input type="text" class="form-control" name="address" id="address" placeholder="" required>
+        <div class="invalid-feedback">
+          Please enter the Job title.
+        </div>
+        <p class="text" for="phoneNumner">Phone number</p>
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="" required>
+        <div class="invalid-feedback">
+          Please enter the Job title.
+        </div>
+        <p class="text" for="Birthday">Date of birth</p>
+        <input type="date" class="form-control" name="birthDay" id="birthDay" placeholder="" required>
+        <div class="invalid-feedback">
+          Please enter the Job title.
+        </div>
+        <div class="Biography">
+          <p class="text" for="biography"> Biography</p>
+          <textarea type="text" class="form-control" name="biography" id="biography" rows="5" placeholder=""
+            required></textarea>
+          <div class="invalid-feedback">
+            Please enter your Company Email.
+          </div>
+        </div>
+      </div>
+    </div>
+    <br> <br>
+    <div class="form-group w-30 m-auto">
+      <input type="submit" value="Save Changes" class="btn btn-primary w-100"></input>
+    </div>
+  </form>
 </body>
-<script>
-// Lưu trạng thái form vào sessionStorage khi form thay đổi
-function saveFormState() {
-
-
-  const address = document.getElementById('address').value;
-  const phone = document.getElementById('phone').value;
-  const Birthday = document.getElementById('Birthday').value;
-  const Biography = document.getElementById('Biography').value;
-
-  // Lưu giá trị khác theo cách tương tự
-
-  sessionStorage.setItem('profile', JSON.stringify({address, phone, Birthday, Biography }));
-}
-
-// Đính kèm sự kiện 'change' hoặc 'input' để lưu trạng thái form
-
-document.getElementById('address').addEventListener('input', saveFormState);
-document.getElementById('phone').addEventListener('input', saveFormState);
-document.getElementById('Birthday').addEventListener('input', saveFormState);
-document.getElementById('Biography').addEventListener('input', saveFormState);
-
-// Lắng nghe sự kiện cho các input khác tương tự
-</script>
-<script>
-window.onload = function() {
-  // Khôi phục trạng thái form từ sessionStorage
-  const savedData = JSON.parse(sessionStorage.getItem('profile'));
-  if (savedData) {
-
-    document.getElementById('address').value = savedData.address || '';
-    document.getElementById('phone').value = savedData.phone || '';
-    document.getElementById('Birthday').value = savedData.Birthday || '';
-    document.getElementById('Biography').value = savedData.Biography || '';
-
-    // Khôi phục giá trị khác theo cách tương tự
-  }
-}
-</script>
