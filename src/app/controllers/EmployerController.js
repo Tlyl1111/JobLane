@@ -41,7 +41,8 @@ class EmployerController {
 
     async posting(req,res) {
         try {
-
+            console.log(req.body);
+            const userId = req.session.userId;
             const newFile = new ImgPosting({
                 name: req.file.originalname,
                 data: req.file.buffer,
@@ -62,8 +63,7 @@ class EmployerController {
                 Requirement: req.body.Goal,
                 HiringProcess: req.body.HiringProcess,
                 HowtoApply: req.body.Howtoapply,
-            });
-            
+            });      
             const newjob = await Job.create({
                 Title: req.body.JobTitle,
                 PostDay: req.body.StartDate,
@@ -71,6 +71,7 @@ class EmployerController {
                 Status: 'assessing',
                 JobDetailID: newjobdetail._id,
                 ImagPosstingID: ImgPosting._id,
+                UserID: userId,
             });
         } catch (error) {
             res.status(500).send(error.message);
