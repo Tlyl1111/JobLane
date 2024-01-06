@@ -7,6 +7,7 @@ const User = new Schema({
     Phone: String,
     Email: String,
     KeyCompany: String,
+
     accId: { type: mongoose.Schema.Types.ObjectId, ref: 'Account' },
     avtId: { type: mongoose.Schema.Types.ObjectId, ref: 'Avatar' },
   });
