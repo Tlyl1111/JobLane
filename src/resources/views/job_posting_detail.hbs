@@ -8,13 +8,6 @@
     
 </head>
 <body>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Home Page</a></li>
-            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">2,629 Marketing Associate Jobs Available</a></li>
-            <li class="breadcrumb-item active" aria-current="page">AEON FUTURE LEADERS PROGRAM (AEON FUTURE LEADERS) - AEON HUE 2024</li>
-        </ol>
-    </nav>
     <div class="content d-flex">
         <div class="job d-flex">
             <div class="company d-flex flex-column">
@@ -37,7 +30,7 @@
                 </div>
             </div>
             <div class="detail_job">
-                <div class="author d-flex align-items-end">
+                {{!-- <div class="author d-flex align-items-end">
                     <img src="/src/public/img/Logo/Company_Aeon.svg" alt="logo"
                     class="author-ava mr-2">
                     <div class="d-flex flex-column">
@@ -50,9 +43,9 @@
                         </div>
                     </div>
                     
-                </div>
+                </div> --}}
                 <div class="title">
-                    [HN/Hue] AEON Vietnam Hiring for the Future Leaders Program (AEON Future Leaders) - AEON Hue 2024
+                    {{Title}}
                 </div>
                 <img src="/src/public/img/Logo/Poster.svg" alt="poster"
                 class="poster d-block mx-auto">
@@ -61,88 +54,55 @@
                         <div class="col-md-6 mb-3 d-flex align-items-center">
                             <img src="/src/public/img/Pin.svg" alt="location"
                             class="mr-2">
-                            Location: Hue
+                            {{this.JobDetailID.Location}}
                         </div>
                         <div class="col-md-6 mb-3 d-flex align-items-center">
                             <img src="/src/public/img/Clock.svg" alt="experiences"
                             class="mr-2">
-                            Experiences: 1-2 years
+                            {{this.JobDetailID.Experience}}
                         </div>
                         <div class="col-md-6 mb-3 d-flex align-items-center">
                             <img src="/src/public/img/Work.svg" alt="jobs type"
                             class="mr-2">
-                            </i> Jobs Type: Fulltime
+                            </i> {{this.JobType}}
                         </div>
                         <div class="col-md-6 mb-3 d-flex align-items-center">
                             <img src="/src/public/img/menu-burger 1.svg" alt="specialization"
                             class="mr-2">
-                            Specialization: Sales
+                            {{this.JobDetailID.Specialization}}
                         </div>
                         <div class="col-10 mb-3 d-flex align-items-center">
                             <img src="/src/public/img/Money.svg" alt="salary"
                             class="mr-2">
-                            Salary Range: 12.000.000 - 17.000.000 VND
+                            {{this.JobDetailID.Salary}}
                         </div>
                         <div class="col-10 mb-3 d-flex align-items-center">
                             <img src="/src/public/img/Relume.svg" alt="campany type"
                             class="mr-2">
-                            Company Type: International Company
+                            {{this.JobDetailID.CompanyType}}
                         </div>
                     </div>        
                 </div>
                 <div class="content d-flex flex-column">
-                    <span class="title">AEON FUTURE LEADERS PROGRAM (AEON FUTURE LEADERS) - AEON HUE 2024</span>
+                    <span class="title">{{this.Title}}</span>
                     <div class="context description">
-                        Joining the AEON FUTURE LEADERS (AFL) program allows young individuals to explore career paths, cultivate and develop personal values, strengthen resilience, and harness potential to become AEON Vietnam's future successors. Participants will undergo training on specialized knowledge and management skills in retail, encompassing business development, sales and marketing, supply chain operations, and management across 8 departments: <br>
-                        <ul>
-                            <li>Food (Foodline)</li>
-                            <li>Fashion (Softline)</li>
-                            <li>Electronics &amp; Home Appliances (Hardline)</li>
-                            <li>Customer Service</li>
-                            <li>Cashier</li>
-                            <li>Human Resources</li>
-                            <li>Admin</li>
-                        </ul>
+                        {{this.JobDetailID.Description}}
                     </div>
                     <span class="sub-title">1. Benefits</span>
                     <div class="context benefit">
-                        Lead a team of 10-15 members. <br>
-                        Opportunities to work in different departments or locations after the program. <br>
-                        Engage in extensive training and coaching sessions, mentored by experienced managers. <br>
-                        Challenge yourself in a multicultural and professional environment. <br>
+                        {{this.JobDetailID.Benefit}}
                     </div>
                     <span class="sub-title">2. Requirements</span>
                     <div class="context requirement">
-                        Final year students or fresh graduates with less than 1-year experience, under 24 years old. <br>
-                        Understanding and passion for service and retail industry. <br>
-                        Desire to work in a professional and dynamic environment. <br>
-                        Basic English proficiency in listening, speaking, reading, and writing.
-                        Personal traits and qualities: <br>
-                        <ul>
-                            <li>Customer-oriented mindset</li>
-                            <li>Result-oriented focus</li>
-                            <li>Team spirit &amp; teamwork capability</li>
-                            <li>Commitment to personal &amp; peer growth</li>
-                            <li>Honesty, fairness, and integrity</li>
-                        </ul>
-                                        
+                        {{this.JobDetailID.Requirement}}     
                     </div>
                     <span class="sub-title">3. Hiring Process</span>
                     <div class="context hiring-process">
-                        <strong>Round 1:</strong> From 1/10 to 31/10/2023: Submit applications via email. <br>
-                        <strong>Round 2:</strong> From 20/11 to 23/11: Preliminary application screening and first round of online interviews. <br>
-                        <strong>Round 3:</strong> From 10/12 to 13/12/2023: AEON Camp: shortlisted candidates are invited to Hanoi for a tour of AEON, group work skill tests, and presentations. Out-of-town candidates will have travel and accommodation expenses covered by AEON. <br>
-                        <strong>Round 4:</strong> From 20/12 to 23/12/2023: Direct interviews in Hue and Da Nang. Successful candidates from the four rounds are expected to receive an invitation and commence official training and work from 26/2/2024.
+                       {{this.JobDetailID.HiringProcess}}
                     </div>
                     <span class="sub-title">4. How to Apply</span>
                     <div class="context apply">
-                        <ol>
-                            <li>Complete the application via the link (or scan the QR code in the image): https://bit.ly/AFL2024</li>
-                            <li>Record a short video introducing yourself, your strengths, and your reasons for applying (max 2 minutes, file size no more than 500MB), upload to Google Drive and paste the link into your CV.</li>
-                            <li>Attach CV and send the application email to: tuyendung.hn@aeon.com.vn with the subject: [AFL Hue] Full Name. We will contact suitable candidates for the subsequent rounds.</li>
-                            <li>For queries about the AFL program, please contact 024.6277.8333 – extension 719. APPLICATION DEADLINE: 31/10/2023</li>
-                            <li>Note: I've tried to ensure the translation is clear and accurate while retaining the intent of the original text.</li>
-                        </ol>
+                        {{this.JobDetailID.HowToApply}}
                     </div>
                     <button type="submit" class="btn btn-primary align-self-center">
                         Apply Now
@@ -150,80 +110,6 @@
                     </button>  
                 </div>
             </div>
-        </div>
-        <div class="recommend d-inline-flex flex-column">
-            <div class="sub-section-title">
-                <span class="color-1">Recommend</span>
-                <span class="color-2">for You</span>
-            </div>
-            <a class="rec-job-item d-flex flex-column" href="#">
-                <img src="/src/public/img/Logo/Company_IsMart.svg" alt="logo" class="rec-job-logo">
-                <div class="rec-job-name">
-                    Administrative Staff, Content Management Assistant
-                </div>
-                <div class="rec-job-info d-flex justify-content-around">
-                    <div class="rec-job-time">
-                        <img src="/src/public/img/Time.svg" alt="Posting Time">
-                        <span>25/10/2023</span>
-                    </div>
-                    <div class="rec-job-salary">
-                        <img src="/src/public/img/Money.svg" alt="Salary">
-                        <span>10.000.000 VND</span>
-                    </div>
-                </div>
-                <hr>
-            </a>
-            <a class="rec-job-item d-flex flex-column" href="#">
-                <img src="/src/public/img/Logo/Company_IsMart.svg" alt="logo" class="rec-job-logo">
-                <div class="rec-job-name">
-                    Administrative Staff, Content Management Assistant
-                </div>
-                <div class="rec-job-info d-flex justify-content-around">
-                    <div class="rec-job-time">
-                        <img src="/src/public/img/Time.svg" alt="Posting Time">
-                        <span>25/10/2023</span>
-                    </div>
-                    <div class="rec-job-salary">
-                        <img src="/src/public/img/Money.svg" alt="Salary">
-                        <span>10.000.000 VND</span>
-                    </div>
-                </div>
-                <hr>
-            </a>
-            <a class="rec-job-item d-flex flex-column" href="#">
-                <img src="/src/public/img/Logo/Company_IsMart.svg" alt="logo" class="rec-job-logo">
-                <div class="rec-job-name">
-                    Administrative Staff, Content Management Assistant
-                </div>
-                <div class="rec-job-info d-flex justify-content-around">
-                    <div class="rec-job-time">
-                        <img src="/src/public/img/Time.svg" alt="Posting Time">
-                        <span>25/10/2023</span>
-                    </div>
-                    <div class="rec-job-salary">
-                        <img src="/src/public/img/Money.svg" alt="Salary">
-                        <span>10.000.000 VND</span>
-                    </div>
-                </div>
-                <hr>
-            </a>
-            <a class="rec-job-item d-flex flex-column" href="#">
-                <img src="/src/public/img/Logo/Company_IsMart.svg" alt="logo" class="rec-job-logo">
-                <div class="rec-job-name">
-                    Administrative Staff, Content Management Assistant
-                </div>
-                <div class="rec-job-info d-flex justify-content-around">
-                    <div class="rec-job-time">
-                        <img src="/src/public/img/Time.svg" alt="Posting Time">
-                        <span>25/10/2023</span>
-                    </div>
-                    <div class="rec-job-salary">
-                        <img src="/src/public/img/Money.svg" alt="Salary">
-                        <span>10.000.000 VND</span>
-                    </div>
-                </div>
-                <hr>
-            </a>            
         </div>
     </div>
 </body>
