@@ -114,40 +114,7 @@ class AdminController {
     }
 
     async job_post(req, res) {
-      try {
-        const job = await Job.find();
-        console.log(job);
-        //const userIds = await User.find({ '_id': { $in: employerAccounts.userID } });
-        const userIds = job.map(job => job.userID);
-        const userDetails = await User.find({ '_id': { $in: userIds }});
-
-        console.log(userIds);
-       // const userDetails = await User.find({ '_id': { $in: userIds } });
-        console.log(userDetails);
-        // Tạo một map từ user ID đến thông tin người dùng
-        const userMap = userDetails.reduce((map, user) => {
-          map[user._id] = {
-              Name: user.Name, // Đảm bảo trường này trùng khớp với trường trong DB
-              Phone: user.Phone // Đảm bảo trường này trùng khớp với trường trong DB
-          };
-          return map;
-        }, {});
-    
-        // Thêm thông tin người dùng vào mỗi account
-        const employers = employerAccounts.map(account => {
-          return {
-            email: account.Email,
-            role: account.Role,
-            userInfo: userMap[account.userID]
-          };
-        });
-        
-    
-        res.render('admin/employer', { layout: 'admin', employers });
-      } catch (error) {
-        console.error('Error while getting employers:', error);
-        res.status(500).send('Error while getting employers: ' + error.message);
-      }
+      
     
     }
 

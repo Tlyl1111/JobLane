@@ -19,6 +19,7 @@ class JobseekerController {
     
     
     async dashboard(req, res) {
+        
         res.render('dashboard');
         
     }
@@ -56,7 +57,7 @@ class JobseekerController {
                 CoverLetter: cv_lt,
                 CVId: newFile._id,
             });
-            res.send({ message: 'File uploaded successfully', fileId: newFile._id });
+            res.render('dashboard');
           } catch (error) {
             res.status(500).send(error.message);
           }
