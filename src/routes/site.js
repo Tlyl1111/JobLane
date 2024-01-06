@@ -12,7 +12,7 @@ router.use('/signup', siteController.signup);
 
 router.use('/calculatejob', siteController.calculateJobs.bind(siteController));
 //add site ở trên dòng này
-router.use('/', siteController.signin);
+router.use('/signin', siteController.signin);
 
 
 module.exports = router;
