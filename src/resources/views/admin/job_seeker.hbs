@@ -24,26 +24,25 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Registry Time</th>
-                <th>Registry Date</th>
                 <th>Details</th>
-            
-            <tr>
-                <td>Selena Gomez</td>
-                <td>abcxyz@gmail.com</td>
-                <td>097xxxxxx</td>
-                <td>21:32</td>
-                <td>26/03/2023</td>
-                <td class="d-flex">
-                    <button class="contact">Send Email</button>
-                    <button class="view" id="view">
-                        View
-                        <img src="/src/public/img/Chevron Right.svg" alt="">
-                    </button>
-                </td>
             </tr>
             
             
+            {{#each employers}}
+            <tr>
+                <td>{{this.userInfo.Name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.userInfo.Phone}}</td>
+                <td class="d-flex">
+                    
+                    <button class="view" id="view" onclick="location.href='/admin/jobseeker_details'">
+                        View
+                        <img src="/src/public/img/Chevron Right.svg" alt="">
+                    </button>
+                    
+                </td>
+            </tr>
+            {{/each}}
             
         </table>
         <div class="table-control d-inline-flex justify-content-start align-items-center">

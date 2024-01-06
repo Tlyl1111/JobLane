@@ -13,21 +13,21 @@ class SiteController {
     // [GET] /
     async find(req, res) {
         
-       /*  try {
-            const role = 'jobseeker';
-            const account = await Account.find({Role: role});
+        try {
+            const role = 'employer';
+            const account = await Account.find({Role: role}).populate('userId');
 
-            const role = 'jobseeker4@gmail.com';
+            //const role = 'jobseeker4@gmail.com';
 
-            const checkEmail = await Account.findOne({Email: role});
-            res.json(checkEmail);
+            //const checkEmail = await Account.findOne({Email: role});
+            res.json(account);
         } catch (err) {
             console.error(err); // Ghi log lỗi
             res.status(400).json({error: 'ERROR!!!'});
-        } */
+        }
         
         //res.render('home');
-        try {
+        /* try {
           const Password = 'admin1';
           const Role = 'admin';
           const Email = 'admin1@gmail.com';
@@ -40,7 +40,7 @@ class SiteController {
           
         } catch (error) {
           res.status(400).json({error: 'ERROR!!!'});
-        }
+        } */
     }
     /* async home(req, res) {
         res.render('home');
