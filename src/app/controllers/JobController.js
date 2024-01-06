@@ -61,6 +61,8 @@ class JobController {
             console.log('Error fetching job data:', error); // This will log any errors when fetching the job data
         }
     }
+
+    
     async jobsByCategory(req, res) {
         console.log('jobsByCategory method called');
         const category = req.params.category;
