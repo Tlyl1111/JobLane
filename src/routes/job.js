@@ -6,7 +6,16 @@ const JobController = require('../app/controllers/JobController');
 
 router.use('/alljob', JobController.alljob);
 router.use('/categories', JobController.categories);
-router.use('/jobs/category/:category', JobController.jobsByCategory); 
-router.use('/jobs/:id', JobController.jobDetails);
+// Job details route
+router.use('/details/:id', (req, res, next) => {
+    console.log('Job details route handler called');
+    next();
+}, JobController.jobDetails);
+
+// Jobs by category route
+router.use('/category/:category', (req, res, next) => {
+    console.log('Jobs by category route handler called');
+    next();
+}, JobController.jobsByCategory);
 
 module.exports = router;

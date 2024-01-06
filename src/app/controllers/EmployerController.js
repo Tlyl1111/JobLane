@@ -63,6 +63,9 @@ class EmployerController {
                 Requirement: req.body.Goal,
                 HiringProcess: req.body.HiringProcess,
                 HowtoApply: req.body.Howtoapply,
+                Category1ID: req.body.Category1ID,
+                Category2ID: req.body.Category2ID,
+                Category3ID: req.body.Category3ID,
             });      
             const newjob = await Job.create({
                 Title: req.body.JobTitle,
