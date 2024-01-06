@@ -19,33 +19,34 @@
                 <img src="/src/public/img/Avatar.png" alt="User" class="user-avatar"> 
             </div>
         </div>
+        
         <table>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone Number</th>
-                <th>Registry Time</th>
-                <th>Registry Date</th>
                 <th>Details</th>
-            
-            <tr>
-                <td>Selena Gomez</td>
-                <td>abcxyz@gmail.com</td>
-                <td>097xxxxxx</td>
-                <td>21:32</td>
-                <td>26/03/2023</td>
-                <td class="d-flex">
-                    <button class="contact">Send Email</button>
-                    <button class="view" id="view">
-                        View
-                        <img src="/src/public/img/Chevron Right.svg" alt="">
-                    </button>
-                </td>
             </tr>
             
             
+            {{#each employers}}
+            <tr>
+                <td>{{this.userInfo.Name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.userInfo.Phone}}</td>
+                <td class="d-flex">
+                    
+                    <button class="view" id="view" >
+                        View
+                        <img src="/src/public/img/Chevron Right.svg" alt="">
+                    </button>
+                    
+                </td>
+            </tr>
+            {{/each}}
             
         </table>
+        
         <div class="table-control d-inline-flex justify-content-start align-items-center">
         <div class="rows-per-page d-inline-flex">
             <label for="rows" class="align-self-center">Rows per page:</label>
@@ -131,10 +132,10 @@
             updateTableDisplay();
         });
         
-        document.getElementById('view').addEventListener('click', function() {
+        //document.getElementById('view').addEventListener('click', function() {
         // Chuyển hướng người dùng đến trang bạn muốn
-        window.location.href = '/admin/employer_details';
-        });
+        //window.location.href = '/admin/employer_details';
+       // });
        
 </script>
 

@@ -6,6 +6,7 @@ const Account = new Schema({
     Email: String,
     Password: String,
     Role: String,
+    userID: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   });
 
 module.exports = mongoose.model('Account', Account, 'accounts');
