@@ -8,6 +8,7 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const ImgPosting = require('../models/ImgPosting');
+const { multipleMongooseToObject, mongooseToObject } = require('../../utils/mongoose'); 
 
 const multer = require('multer');
 // Sử dụng memoryStorage để tệp được lưu trong bộ nhớ tạm thời
@@ -25,7 +26,14 @@ class EmployerController {
         res.render('employer/post_job');
     }
     async posted_jobs(req, res) {      
-        res.render('employer/post_list');
+        try {
+            const userId = req.session.userId;
+            const jobs = await Job.find({ UserID: userId }).populate('JobDetailID');
+            const jobsObject = multipleMongooseToObject(jobs);
+            res.render('employer/post_list', { jobs: jobsObject });
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
     }
     async profile(req, res) {
         const firstName = req.query.firstName;
@@ -63,9 +71,9 @@ class EmployerController {
                 Requirement: req.body.Goal,
                 HiringProcess: req.body.HiringProcess,
                 HowtoApply: req.body.Howtoapply,
-                Category1ID: req.body.Category1ID,
-                Category2ID: req.body.Category2ID,
-                Category3ID: req.body.Category3ID,
+                Category1: req.body.Category1ID,
+                Category2: req.body.Category2ID,
+                Category3: req.body.Category3ID,
             });      
             const newjob = await Job.create({
                 Title: req.body.JobTitle,
@@ -81,7 +89,7 @@ class EmployerController {
         }
 
     }
-    
+
 }
 
 module.exports = new EmployerController();
